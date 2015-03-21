@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */; };
+		ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E41ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld */; };
+		ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E71ABD57F60029DF5D /* ViewController.swift */; };
+		ACDDF2EB1ABD57F60029DF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2E91ABD57F60029DF5D /* Main.storyboard */; };
+		ACDDF2ED1ABD57F60029DF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */; };
+		ACDDF2F01ABD57F60029DF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */; };
+		ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
+			remoteInfo = "Stroll Safe";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stroll Safe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDDF2E11ABD57F50029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACDDF2E51ABD57F60029DF5D /* Stroll_Safe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stroll_Safe.xcdatamodel; sourceTree = "<group>"; };
+		ACDDF2E71ABD57F60029DF5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACDDF2EA1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ACDDF2EF1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stroll SafeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDDF2FA1ABD57F60029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACDDF2DA1ABD57F50029DF5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACDDF2F21ABD57F60029DF5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACDDF2D41ABD57F50029DF5D = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */,
+				ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */,
+				ACDDF2DE1ABD57F50029DF5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACDDF2DE1ABD57F50029DF5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */,
+				ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */ = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */,
+				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
+				ACDDF2E91ABD57F60029DF5D /* Main.storyboard */,
+				ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */,
+				ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */,
+				ACDDF2E41ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld */,
+				ACDDF2E01ABD57F50029DF5D /* Supporting Files */,
+			);
+			path = "Stroll Safe";
+			sourceTree = "<group>";
+		};
+		ACDDF2E01ABD57F50029DF5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2E11ABD57F50029DF5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */,
+				ACDDF2F91ABD57F60029DF5D /* Supporting Files */,
+			);
+			path = "Stroll SafeTests";
+			sourceTree = "<group>";
+		};
+		ACDDF2F91ABD57F60029DF5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACDDF2FA1ABD57F60029DF5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll Safe" */;
+			buildPhases = (
+				ACDDF2D91ABD57F50029DF5D /* Sources */,
+				ACDDF2DA1ABD57F50029DF5D /* Frameworks */,
+				ACDDF2DB1ABD57F50029DF5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stroll Safe";
+			productName = "Stroll Safe";
+			productReference = ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACDDF2F41ABD57F60029DF5D /* Stroll SafeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACDDF3021ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll SafeTests" */;
+			buildPhases = (
+				ACDDF2F11ABD57F60029DF5D /* Sources */,
+				ACDDF2F21ABD57F60029DF5D /* Frameworks */,
+				ACDDF2F31ABD57F60029DF5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACDDF2F71ABD57F60029DF5D /* PBXTargetDependency */,
+			);
+			name = "Stroll SafeTests";
+			productName = "Stroll SafeTests";
+			productReference = ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACDDF2D51ABD57F50029DF5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Stroll Safe";
+				TargetAttributes = {
+					ACDDF2DC1ABD57F50029DF5D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					ACDDF2F41ABD57F60029DF5D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = ACDDF2DC1ABD57F50029DF5D;
+					};
+				};
+			};
+			buildConfigurationList = ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "Stroll Safe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACDDF2D41ABD57F50029DF5D;
+			productRefGroup = ACDDF2DE1ABD57F50029DF5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */,
+				ACDDF2F41ABD57F60029DF5D /* Stroll SafeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACDDF2DB1ABD57F50029DF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDDF2EB1ABD57F60029DF5D /* Main.storyboard in Resources */,
+				ACDDF2F01ABD57F60029DF5D /* LaunchScreen.xib in Resources */,
+				ACDDF2ED1ABD57F60029DF5D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACDDF2F31ABD57F60029DF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACDDF2D91ABD57F50029DF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
+				ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */,
+				ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACDDF2F11ABD57F60029DF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACDDF2F71ABD57F60029DF5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */;
+			targetProxy = ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ACDDF2E91ABD57F60029DF5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACDDF2EA1ABD57F60029DF5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACDDF2EF1ABD57F60029DF5D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACDDF2FD1ABD57F60029DF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACDDF2FE1ABD57F60029DF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACDDF3001ABD57F60029DF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Stroll Safe/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ACDDF3011ABD57F60029DF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Stroll Safe/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ACDDF3031ABD57F60029DF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
+			};
+			name = Debug;
+		};
+		ACDDF3041ABD57F60029DF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "Stroll Safe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACDDF2FD1ABD57F60029DF5D /* Debug */,
+				ACDDF2FE1ABD57F60029DF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll Safe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACDDF3001ABD57F60029DF5D /* Debug */,
+				ACDDF3011ABD57F60029DF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ACDDF3021ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll SafeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACDDF3031ABD57F60029DF5D /* Debug */,
+				ACDDF3041ABD57F60029DF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACDDF2E41ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACDDF2E51ABD57F60029DF5D /* Stroll_Safe.xcdatamodel */,
+			);
+			currentVersion = ACDDF2E51ABD57F60029DF5D /* Stroll_Safe.xcdatamodel */;
+			path = Stroll_Safe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ACDDF2D51ABD57F50029DF5D /* Project object */;
+}
