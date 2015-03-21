@@ -9,10 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var releaseButton: UIButton!
+    @IBOutlet weak var thumbButton: UIButton!
+    @IBOutlet weak var titleMain: UILabel!
+    @IBOutlet weak var titleSub: UILabel!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        progressBar.hidden = true
+        releaseButton.hidden = true
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
