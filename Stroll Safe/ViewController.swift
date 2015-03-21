@@ -9,18 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var progressBar: UIProgressView!
+    /*@IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var releaseButton: UIButton!
     @IBOutlet weak var thumbButton: UIButton!
     @IBOutlet weak var titleMain: UILabel!
-    @IBOutlet weak var titleSub: UILabel!
+    @IBOutlet weak var titleSub: UILabel!*/
 
+    @IBAction func releaseButtonAction(sender: UIButton) {
+    }
+    
+    @IBAction func thumbButtonAction(sender: AnyObject) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        progressBar.hidden = true
-        releaseButton.hidden = true
+        //progressBar.hidden = true
+        //releaseButton.hidden = true
         
         
     }
@@ -29,7 +34,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+   
 
 }
 

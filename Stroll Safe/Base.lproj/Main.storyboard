@@ -27,12 +27,20 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="thumbButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OZG-7y-Fdw"/>
+                                    <action selector="thumbButtonDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="Kk1-1P-ohp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LrB-j0-KXS">
                                 <rect key="frame" x="164" y="319" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="releaseButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZC0-aD-mNS"/>
+                                    <action selector="releaseButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T6t-cL-kjO"/>
+                                </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JZH-Ru-svI">
                                 <rect key="frame" x="112" y="309" width="150" height="2"/>
@@ -51,7 +59,9 @@
                     <connections>
                         <outlet property="progressBar" destination="JZH-Ru-svI" id="kjA-Yw-vuK"/>
                         <outlet property="releaseButton" destination="LrB-j0-KXS" id="VCM-UE-iPd"/>
+                        <outlet property="releaseButtonClicked" destination="LrB-j0-KXS" id="nKh-iL-VFY"/>
                         <outlet property="thumbButton" destination="fhE-Zr-5mn" id="nW6-No-IvG"/>
+                        <outlet property="thumbButtonAction" destination="fhE-Zr-5mn" id="K4Y-nD-jxK"/>
                         <outlet property="title" destination="X9N-om-rNw" id="RgV-Se-Tg8"/>
                         <outlet property="titleMain" destination="X9N-om-rNw" id="BPz-6w-4uu"/>
                         <outlet property="titleSub" destination="TS6-wO-OGf" id="wTe-IB-rQP"/>
