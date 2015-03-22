@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fm8-VZ-o5H">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -41,7 +41,6 @@
                                     <action selector="thumbDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="zDD-gh-t8r"/>
                                     <action selector="thumbUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oSU-1B-7TU"/>
                                     <action selector="thumbUpOutside:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="Rep-vB-fY0"/>
-                                    <outletCollection property="gestureRecognizers" destination="Sg3-1W-hIh" appends="YES" id="jW4-6F-6J8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j7-iG-I5K">
@@ -72,6 +71,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIa-LE-MIm">
+                                <rect key="frame" x="277" y="423" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -97,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="307.5" y="239.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Lockdown Controller View Controller-->
         <scene sceneID="GxM-Ud-cyR">
             <objects>
-                <viewController id="Fm8-VZ-o5H" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lockdown" id="Fm8-VZ-o5H" customClass="LockdownControllerViewController" customModule="Stroll_Safe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9sT-Ff-lIm"/>
                         <viewControllerLayoutGuide type="bottom" id="3eU-ma-6fG"/>
