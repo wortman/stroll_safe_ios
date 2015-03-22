@@ -49,11 +49,25 @@ class LockdownControllerViewController: UIViewController {
             third.hidden = false
         case 3:
             fourth.hidden = false
+        case 4:
+            currentIdx--
         default:
             println("Invalid")
         }
         passField[currentIdx] = value
         currentIdx++
+        
+        
+        /*var number = first as UIView
+    
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(number.center.x - 10, number.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(number.center.x + 10, number.center.y))
+        number.layer.addAnimation(animation, forKey: "position")*/
+        
     }
     
     @IBAction func buttonOne(sender: UIButton) {
