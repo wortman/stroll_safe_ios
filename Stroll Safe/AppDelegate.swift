@@ -2,12 +2,13 @@
 //  AppDelegate.swift
 //  Stroll Safe
 //
-//  Created by Guest User on 3/21/15.
+//  Created by Guest User (Mitchell) on 3/21/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 
 import UIKit
 import CoreData
+//import KeychainSwiftAPI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // TODO check global variable for password
+        // if password exists, continue to app
+        // else, ask for password and store (hashed?) in variable
+        // then go to pre-touch mode
+        
+        
         return true
     }
 
