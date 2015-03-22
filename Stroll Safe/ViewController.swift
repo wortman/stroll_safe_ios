@@ -29,16 +29,21 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var thumb: UIButton!
     @IBOutlet weak var shake: UIButton!
+    @IBOutlet weak var shakeDesc: UILabel!
+    @IBOutlet weak var thumbDesc: UILabel!
     
 
-    @IBAction func shakeUp(sender: AnyObject) {
-        enterShakeState();
+    @IBAction func shakeLongPress(sender: AnyObject) {
+        if sender.state == UIGestureRecognizerState.Began
+        {
+            enterStartState()
+        }
     }
-
+    
     /* Sets an observer to change progress every time 
     * the timer is updated 
     */
-    var timer:Float = 0 {
+    var timer:Float = 0 /*{
         didSet {
             let fractionalProgress = Float(timer) / 200.0
             let animated = timer != 0
@@ -47,24 +52,37 @@ class ViewController: UIViewController {
             progressLabel.text = ("\(timer/100)")
 
         }
-    }
+    }*/
     
     
     @IBAction func thumbDown(sender: UIButton) {
-        enterThumbState();
+        enterThumbState()
     }
     
    @IBAction func thumbUpInside(sender: UIButton) {
         enterReleaseState()
     }
     
-    @IBAction func thumbUpOutside(sender: AnyObject) {
-        var touch = touches.anyObject()
-        var point = touch.locationInView(self.view)
-        println(point);
-        enterReleaseState()
+    @IBAction func thumbUpOutside(sender: AnyObject, forEvent event: UIEvent) {
+        
+        let buttonView = sender as UIView
+        let mainView = self.view
+        
+            // get any touch on the buttonView
+            if let touch = event.touchesForView(buttonView)?.anyObject() as? UITouch {
+                // print the touch location on the button
+                let location = touch.locationInView(mainView)
+                println(location)
+                if ((location.x < 139 || location.x > 239) ||
+                    (location.y < 249.0 || location.y > 350.5)){
+                        enterReleaseState()
+                }else{
+                    enterShakeState()
+                }
+            }
     }
     
+
     @IBAction func releaseButtonAction(sender: AnyObject) {
     }
     
@@ -72,75 +90,99 @@ class ViewController: UIViewController {
     }
     
     func enterStartState(){
-        progressBar.hidden = true
-        progressLabel.hidden = true
-        thumb.hidden = false
-        shake.hidden = true
+        setThumbVisibility(true)
+        setProgressVisibility(false)
+        setShakeVisibility(false, type: true)
+        changeTitle("Stroll Safe", sub: "Keeping You Safe on Your Late Night Strolls")
+        
         mode = state.START
     }
     
     func enterThumbState(){
         timer = 0
-        thumb.hidden = true;
-        progressBar.hidden = true
-        progressLabel.hidden = true
-        shake.hidden = false
+        setThumbVisibility(false)
+        setProgressVisibility(false)
+        setShakeVisibility(true, type: true)
+        changeTitle("Release Mode", sub:"Release Thumb to Contact Police")
         
-        titleMain.text = "Release Mode"
-        titleSub.text = "Release Thumb to Contact Police"
-        
+        shakeDesc.text = "Slide Thumb and Release to Enter Shake Mode"
         
         mode = state.THUMB
     }
     
     func enterReleaseState(){
-        thumb.hidden = false
-        progressBar.hidden = false
-        progressLabel.hidden = false
-        shake.hidden = true
+        setThumbVisibility(true)
+        setProgressVisibility(true)
+        setShakeVisibility(false,type: true)
+        changeTitle("Thumb Released", sub: "Press and Hold Button to Cancel")
         mode = state.RELEASE
         
-        progressLabel.text = "0%"
+        progressLabel.text = "0"
         self.timer = 0
-        for i in 0..<200 {
-            if (mode != state.RELEASE){
-                break;
-            }
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                usleep(1000000)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+            for i in 0..<20 {
+                if (self.mode != state.RELEASE){
+                    break
+                }
+                usleep(2500)
                 dispatch_async(dispatch_get_main_queue(), {
                     self.timer++
-                    return
+                    let fractionalProgress = Float(self.timer) / 20.0
+                    let animated = false;
+                
+                    self.progressBar.setProgress(fractionalProgress, animated: animated)
+                    self.progressLabel.text = ("\(2-(self.timer/10)) seconds remaining")
                 })
-            })
-        }
+            }
+        })
+
     }
     
     func enterShakeState(){
         timer = 0
-        thumb.hidden = false
-        progressBar.hidden = true
-        progressLabel.hidden = true
+        setThumbVisibility(true)
+        setProgressVisibility(false)
+        setShakeVisibility(true, type: false)
+        changeTitle("Shake Mode", sub: "Shake Phone to Contact Police")
         
-        titleMain.text = "Shake Mode"
-        titleSub.text = "Shake Phone to Contact Police"
-        
+        shakeDesc.text = "Press and Hold to Exit the App"
         
         mode = state.SHAKE
     }
     
-    func update(){
-        timer -= 0.1
+    func changeTitle(title: NSString,  sub: NSString){
+        titleMain.text = title
+        titleSub.text = sub
+    }
+    
+    func setProgressVisibility(visibility: Bool){
+        progressBar.hidden = !visibility
+        progressLabel.hidden = !visibility
+    }
+    
+    func setThumbVisibility(visibility: Bool){
+        thumb.hidden = !visibility
+        thumbDesc.hidden = !visibility
+    }
+    
+    // First parameter is whether it's visible
+    // Second sets it as the shake button when true,
+    // exit button when false
+    func setShakeVisibility(visibility: Bool, type: Bool){
+        shake.hidden = !visibility
+        shakeDesc.hidden = !visibility
         
-        let fractionalProgress = 1-(Float(timer) / 2)
-        let animated = timer != 2
-        
-        progressBar.setProgress(fractionalProgress, animated: animated)
-        
-        let doubleFormat = "1.2"
-        var time = "\(timer.format(doubleFormat))"
-        progressLabel.text = (time)
+        // Setup the shake icon
+        if type{
+            if let image  = UIImage(named: "shake_icon.png") {
+                shake.setImage(image, forState: .Normal)
+            }
+        }
+        else{
+            if let image  = UIImage(named: "close_icon.png") {
+                    shake.setImage(image, forState: .Normal)
+            }
+        }
     }
     
     override func viewDidLoad() {
