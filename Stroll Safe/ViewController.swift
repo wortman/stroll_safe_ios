@@ -70,9 +70,7 @@ class ViewController: UIViewController {
         
             // get any touch on the buttonView
             if let touch = event.touchesForView(buttonView)?.anyObject() as? UITouch {
-                // print the touch location on the button
                 let location = touch.locationInView(mainView)
-                println(location)
                 if ((location.x < 139 || location.x > 239) ||
                     (location.y < 249.0 || location.y > 350.5)){
                         enterReleaseState()
@@ -135,6 +133,8 @@ class ViewController: UIViewController {
                 })
             }
         })
+        
+        performSegueWithIdentifier("lockdown", sender: nil)
 
     }
     
