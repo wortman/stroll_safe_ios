@@ -132,10 +132,12 @@ class ViewController: UIViewController {
                     self.progressLabel.text = ("\(2-(self.timer/10)) seconds remaining")
                 })
             }
+            if (self.mode == state.RELEASE){
+                self.performSegueWithIdentifier("lockdownSegue", sender: nil)
+            }
+
         })
         
-        performSegueWithIdentifier("lockdown", sender: nil)
-
     }
     
     func enterShakeState(){
@@ -196,6 +198,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
    
-
 }
 
