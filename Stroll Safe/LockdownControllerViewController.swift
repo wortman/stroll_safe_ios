@@ -10,6 +10,16 @@ import UIKit
 
 class LockdownControllerViewController: UIViewController {
 
+    @IBOutlet weak var first: UIButton!
+    @IBOutlet weak var second: UIButton!
+    @IBOutlet weak var third: UIButton!
+    @IBOutlet weak var fourth: UIButton!
+    @IBOutlet weak var placeholder1: UIView!
+    @IBOutlet weak var placeholder2: UIView!
+    @IBOutlet weak var placeholder3: UIView!
+    @IBOutlet weak var placeholder4: UIView!
+    
+    var correctPass = [Double](count: 4, repeatedValue: 2.0)
     var input = -1
     var passField = [Double](count: 4, repeatedValue: 0.0)
     var currentIdx = 0;
@@ -22,11 +32,16 @@ class LockdownControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        clear()
+        // Do any additional setup after loading the view.
+    }
+    
+    func clear(){
         first.hidden = true
         second.hidden = true
         third.hidden = true
         fourth.hidden = true
-        // Do any additional setup after loading the view.
+        currentIdx = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,39 +49,53 @@ class LockdownControllerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var first: UILabel!
-    @IBOutlet weak var second: UILabel!
-    @IBOutlet weak var third: UILabel!
-    @IBOutlet weak var fourth: UILabel!
+    func passFieldString() -> NSString{
+        var passString = "\(Int(passField[0]))\(Int(passField[1]))\(Int(passField[2]))\(Int(passField[3]))"
+        return passString
+    }
     
     func setPassField(value: Double){
+        passField[currentIdx] = value
+        currentIdx++
+
         switch currentIdx{
-        case 0:
-            first.hidden = false
         case 1:
-            second.hidden = false
+            first.hidden = false
         case 2:
-            third.hidden = false
+            second.hidden = false
         case 3:
-            fourth.hidden = false
+            third.hidden = false
         case 4:
+            fourth.hidden = false
+            if OhShitLock.sharedInstance.unlock(passFieldString()){
+                self.performSegueWithIdentifier("unlockSegue", sender: nil)
+            }else{
+                clear()
+                
+                var numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                    for filler in numbers {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            var number = filler as UIView
+                    
+                            let animation = CABasicAnimation(keyPath: "position")
+                            animation.duration = 0.07
+                            animation.repeatCount = 4
+                            animation.autoreverses = true
+                            animation.fromValue = NSValue(CGPoint: CGPointMake(number.center.x - 10, number.center.y))
+                            animation.toValue = NSValue(CGPoint: CGPointMake(number.center.x    + 10, number.center.y))
+                            number.layer.addAnimation(animation, forKey: "position")
+                        })
+                    }
+                })
+            }
+            
+        case 5:
             currentIdx--
         default:
             println("Invalid")
         }
-        passField[currentIdx] = value
-        currentIdx++
-        
-        
-        /*var number = first as UIView
-    
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        animation.fromValue = NSValue(CGPoint: CGPointMake(number.center.x - 10, number.center.y))
-        animation.toValue = NSValue(CGPoint: CGPointMake(number.center.x + 10, number.center.y))
-        number.layer.addAnimation(animation, forKey: "position")*/
         
     }
     

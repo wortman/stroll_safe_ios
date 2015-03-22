@@ -133,6 +133,7 @@ class ViewController: UIViewController {
                 })
             }
             if (self.mode == state.RELEASE){
+                OhShitLock.sharedInstance.lock("1234")
                 self.performSegueWithIdentifier("lockdownSegue", sender: nil)
             }
 
