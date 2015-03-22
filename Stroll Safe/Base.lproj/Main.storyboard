@@ -29,22 +29,73 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-Hc-fec">
-                                <rect key="frame" x="112" y="299" width="150" height="2"/>
+                                <rect key="frame" x="16" y="285" width="343" height="2"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60C-pj-h49">
-                                <rect key="frame" x="164" y="578" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60C-pj-h49">
+                                <rect key="frame" x="137" y="524" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <state key="normal" image="finger_icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="thumbDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="zDD-gh-t8r"/>
+                                    <action selector="thumbUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oSU-1B-7TU"/>
+                                    <action selector="thumbUpOutside:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="Rep-vB-fY0"/>
+                                    <outletCollection property="gestureRecognizers" destination="Sg3-1W-hIh" appends="YES" id="jW4-6F-6J8"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j7-iG-I5K">
+                                <rect key="frame" x="112" y="286" width="150" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGA-Gq-kzX">
+                                <rect key="frame" x="137" y="248" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <state key="normal" image="shake_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JqX-m8-TYN" appends="YES" id="1iI-9V-rbv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press and Hold to Arm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpK-ox-49w">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Thumb and Release to Enter Shake Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbx-8F-CS3">
+                                <rect key="frame" x="16" y="345" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="progressBar" destination="rQ4-Hc-fec" id="bOG-HM-6lD"/>
+                        <outlet property="progressLabel" destination="4j7-iG-I5K" id="7s5-BZ-5hg"/>
+                        <outlet property="shake" destination="YGA-Gq-kzX" id="bGL-rn-agD"/>
+                        <outlet property="shakeDesc" destination="kbx-8F-CS3" id="cYa-J9-q9U"/>
+                        <outlet property="thumb" destination="60C-pj-h49" id="G1f-5n-yM4"/>
+                        <outlet property="thumbDesc" destination="HpK-ox-49w" id="lC6-gw-mHd"/>
+                        <outlet property="titleMain" destination="KOv-yq-ZNo" id="rCn-LQ-4xC"/>
+                        <outlet property="titleSub" destination="pa5-dg-QGN" id="ejg-Zk-aqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="JqX-m8-TYN">
+                    <connections>
+                        <action selector="shakeLongPress:" destination="vXZ-lx-hvc" id="WYf-bA-gYk"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="307.5" y="239.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GxM-Ud-cyR">
@@ -165,4 +216,8 @@
             <point key="canvasLocation" x="735" y="271"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="finger_icon.png" width="100" height="100"/>
+        <image name="shake_icon.png" width="100" height="100"/>
+    </resources>
 </document>
