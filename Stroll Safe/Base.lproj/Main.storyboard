@@ -281,11 +281,6 @@
                                     <constraint firstAttribute="width" constant="40" id="zKf-59-Z9G"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-ed-huk">
-                                <rect key="frame" x="16" y="50" width="288" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="SPPPPEEEEEED"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2e-DO-sVP">
                                 <rect key="frame" x="17" y="285" width="96" height="40"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
