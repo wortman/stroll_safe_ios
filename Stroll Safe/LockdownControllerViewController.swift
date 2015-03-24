@@ -18,6 +18,7 @@ class LockdownControllerViewController: UIViewController {
     @IBOutlet weak var placeholder2: UIView!
     @IBOutlet weak var placeholder3: UIView!
     @IBOutlet weak var placeholder4: UIView!
+    @IBOutlet weak var progressLayer: UIView!
     
     var correctPass = [Double](count: 4, repeatedValue: 2.0)
     var input = -1
@@ -164,7 +165,6 @@ class LockdownControllerViewController: UIViewController {
 
         currentIdx--
     }
-    
     
     /*
     // MARK: - Navigation
