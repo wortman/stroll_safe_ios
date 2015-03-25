@@ -71,8 +71,14 @@ class ViewController: UIViewController {
             // get any touch on the buttonView
             if let touch = event.touchesForView(buttonView)?.anyObject() as? UITouch {
                 let location = touch.locationInView(mainView)
-                if ((location.x < 139 || location.x > 239) ||
-                    (location.y < 249.0 || location.y > 350.5)){
+                
+                let frame = shake.frame
+                let minX = CGRectGetMinX(frame)
+                let maxX = CGRectGetMaxX(frame)
+                let minY = CGRectGetMinY(frame)
+                let maxY = CGRectGetMaxY(frame)
+                if ((location.x < minX || location.x > maxX) ||
+                    (location.y < minY || location.y > maxY)){
                         enterReleaseState()
                 }else{
                     enterShakeState()
@@ -134,8 +140,9 @@ class ViewController: UIViewController {
             }
             if (self.mode == state.RELEASE){
                 OhShitLock.sharedInstance.lock("1234")
-                self.performSegueWithIdentifier("lockdownSegue", sender: nil)
-            }
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("lockdownSegue", sender: nil)
+                })            }
 
         })
         
