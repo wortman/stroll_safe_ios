@@ -16,6 +16,8 @@
 		ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */; };
 		BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0155891AC2094E00BED16A /* CircleProgressView.swift */; };
 		BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25169F1AC368D200024CF6 /* Passcode.swift */; };
+		BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A11AC3927300024CF6 /* PinpadViewController.swift */; };
+		BF2516A41AC39D5A00024CF6 /* ViewWithPinpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */; };
 		BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */; };
 		BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
@@ -47,6 +49,8 @@
 		ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeTests.swift; sourceTree = "<group>"; };
 		BF0155891AC2094E00BED16A /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		BF25169F1AC368D200024CF6 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
+		BF2516A11AC3927300024CF6 /* PinpadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewController.swift; sourceTree = "<group>"; };
+		BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithPinpadController.swift; sourceTree = "<group>"; };
 		BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockdownControllerViewController.swift; sourceTree = "<group>"; };
 		BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLock.swift; sourceTree = "<group>"; };
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
@@ -98,8 +102,10 @@
 				ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */,
 				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
 				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
+				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
 				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
 				BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */,
+				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
 				ACDDF2E91ABD57F60029DF5D /* Main.storyboard */,
 				ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */,
 				ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */,
@@ -256,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */,
 				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
 				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
 				BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */,
@@ -263,6 +270,7 @@
 				ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */,
 				BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */,
 				BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */,
+				BF2516A41AC39D5A00024CF6 /* ViewWithPinpadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

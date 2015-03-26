@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         }
     }*/
     var passcode: String = ""
-    
+        
     @IBAction func thumbDown(sender: UIButton) {
         enterThumbState()
     }
