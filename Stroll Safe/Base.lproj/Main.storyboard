@@ -6,6 +6,86 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="boV-Dt-H9M">
+            <objects>
+                <viewController id="bWi-6g-m7W" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aEf-o3-uGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ja-uk-Tcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0yC-5F-3da">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SD-lj-lYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-712" y="239"/>
+        </scene>
+        <!--Set Passcode View Controller-->
+        <scene sceneID="uKC-ym-7za">
+            <objects>
+                <viewController storyboardIdentifier="SetPasscode" id="PaD-Ot-r0Q" customClass="SetPasscodeViewController" customModule="Stroll_Safe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S18-mu-Bgq"/>
+                        <viewControllerLayoutGuide type="bottom" id="gUM-GT-cVr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZWk-fU-65G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="upq-3U-inV">
+                                <rect key="frame" x="16" y="185" width="288" height="363"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="upq-3U-inV" secondAttribute="height" multiplier="96:121" id="4Ty-BL-Cik"/>
+                                    <constraint firstAttribute="width" secondItem="upq-3U-inV" secondAttribute="height" multiplier="96:121" id="e9R-JG-yNi"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="sT2-At-Ld4" kind="embed" id="BtO-pi-kDi"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amY-Mo-hzk">
+                                <rect key="frame" x="75" y="20" width="170" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="WN3-JZ-m3C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDq-vk-kVj">
+                                <rect key="frame" x="53" y="43" width="214" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="g0S-zD-xl8"/>
+                                    <constraint firstAttribute="width" constant="214" id="g1Y-da-gCx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="gDq-vk-kVj" secondAttribute="centerX" id="5Pc-ax-d4o"/>
+                            <constraint firstAttribute="centerX" secondItem="amY-Mo-hzk" secondAttribute="centerX" id="6By-zp-xR9"/>
+                            <constraint firstItem="amY-Mo-hzk" firstAttribute="top" secondItem="ZWk-fU-65G" secondAttribute="top" constant="20" id="8rj-Pn-kuB"/>
+                            <constraint firstItem="gDq-vk-kVj" firstAttribute="top" secondItem="ZWk-fU-65G" secondAttribute="top" constant="43" id="Fy7-kP-4cw"/>
+                            <constraint firstAttribute="centerX" secondItem="upq-3U-inV" secondAttribute="centerX" id="M1z-7n-rdc"/>
+                            <constraint firstItem="gDq-vk-kVj" firstAttribute="centerX" secondItem="amY-Mo-hzk" secondAttribute="centerX" id="Qw0-zV-ag9"/>
+                            <constraint firstItem="upq-3U-inV" firstAttribute="top" secondItem="ZWk-fU-65G" secondAttribute="top" constant="185" id="avr-U7-gCa"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="subLabel" destination="gDq-vk-kVj" id="iJg-ES-k4J"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="setPassSuccessSegue" id="p6v-z3-XDB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKJ-np-6hj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="239"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Stroll_Safe" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,6 +207,7 @@
                         <outlet property="titleMain" destination="KOv-yq-ZNo" id="rCn-LQ-4xC"/>
                         <outlet property="titleSub" destination="pa5-dg-QGN" id="ejg-Zk-aqX"/>
                         <segue destination="Fm8-VZ-o5H" kind="show" identifier="lockdownSegue" id="Ik0-4p-X00"/>
+                        <segue destination="PaD-Ot-r0Q" kind="show" identifier="setPassSegue" id="gi0-4E-eza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -249,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDo-Nh-ieb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="270"/>
+            <point key="canvasLocation" x="728" y="239"/>
         </scene>
         <!--Pinpad-->
         <scene sceneID="c0H-Fv-dCK">
@@ -574,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoN-kV-gK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="388.5"/>
+            <point key="canvasLocation" x="307" y="850.5"/>
         </scene>
     </scenes>
     <resources>
@@ -582,4 +663,8 @@
         <image name="progressImage" width="250" height="250"/>
         <image name="shake_icon.png" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="p6v-z3-XDB"/>
+        <segue reference="BtO-pi-kDi"/>
+    </inferredMetricsTieBreakers>
 </document>

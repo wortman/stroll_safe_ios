@@ -202,34 +202,25 @@ class ViewController: UIViewController {
         // Retreive the managedObjectContext from AppDelegate
         let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
         
-        let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as Passcode
-        
-        newItem.passcode = "1234"
-        
-        var error : NSError? = nil
-        if !managedObjectContext!.save(&error) {
-            NSLog("Unresolved error \(error), \(error!.userInfo)")
-            abort()
-        }
-        
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest(entityName: "Passcode")
         
+        var error : NSError? = nil
         let fetchedResults =
         managedObjectContext!.executeFetchRequest(fetchRequest,
             error: &error) as [Passcode]?
         
+        // Store the pass in our global pass var, if it's there. Otherwise, segue to the setPass scene
         if let results = fetchedResults {
-            self.passcode = results[0].passcode
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+            if !results.isEmpty {
+                self.passcode = results[0].passcode
+            }
+            else{
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("setPassSegue", sender: nil)
+                })
+            }
         }
-
-        
-        // Execute the fetch request, and cast the results to an array of LogItem objects
-       // if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Passcode] {
-      //      self.passcode = fetchResults[0].passcode
-       // }
     }
 
     override func didReceiveMemoryWarning() {
