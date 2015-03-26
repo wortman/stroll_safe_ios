@@ -15,6 +15,7 @@
 		ACDDF2F01ABD57F60029DF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */; };
 		ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */; };
 		BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0155891AC2094E00BED16A /* CircleProgressView.swift */; };
+		BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25169F1AC368D200024CF6 /* Passcode.swift */; };
 		BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */; };
 		BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
@@ -45,6 +46,7 @@
 		ACDDF2FA1ABD57F60029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeTests.swift; sourceTree = "<group>"; };
 		BF0155891AC2094E00BED16A /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		BF25169F1AC368D200024CF6 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockdownControllerViewController.swift; sourceTree = "<group>"; };
 		BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLock.swift; sourceTree = "<group>"; };
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		ACDDF2D41ABD57F50029DF5D = {
 			isa = PBXGroup;
 			children = (
+				BF25169B1AC3627C00024CF6 /* Frameworks */,
 				ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */,
 				ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */,
 				ACDDF2DE1ABD57F50029DF5D /* Products */,
@@ -101,6 +104,7 @@
 				ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */,
 				ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */,
 				ACDDF2E41ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld */,
+				BF25169F1AC368D200024CF6 /* Passcode.swift */,
 				ACDDF2E01ABD57F50029DF5D /* Supporting Files */,
 			);
 			path = "Stroll Safe";
@@ -129,6 +133,14 @@
 				ACDDF2FA1ABD57F60029DF5D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF25169B1AC3627C00024CF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			path = "Stroll Safe";
 			sourceTree = "<group>";
 		};
 		BFD7C97A1ABE3D5000D973DF /* images */ = {
@@ -245,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
+				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
 				BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */,
 				ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */,
 				ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */,

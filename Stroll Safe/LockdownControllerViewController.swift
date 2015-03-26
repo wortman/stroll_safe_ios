@@ -10,6 +10,8 @@ import UIKit
 
 class LockdownControllerViewController: UIViewController {
 
+    @IBOutlet weak var progressCircle: CircleProgressView!
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var first: UIButton!
     @IBOutlet weak var second: UIButton!
     @IBOutlet weak var third: UIButton!
@@ -24,6 +26,11 @@ class LockdownControllerViewController: UIViewController {
     var input = -1
     var passField = [Double](count: 4, repeatedValue: 0.0)
     var currentIdx = 0;
+    var timer = 0
+    var velocity = 1
+    let acceleration = 3
+    var timerPressed: Bool = false
+    let sleepTime:useconds_t = 10000
     
 /*  while (sizeof(array) < 4)
         listen for button presses
@@ -35,6 +42,53 @@ class LockdownControllerViewController: UIViewController {
 
         clear()
         // Do any additional setup after loading the view.
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+            var realTime:useconds_t = 0
+            while (self.timer < 200) {
+                usleep(self.sleepTime)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.timer+=self.velocity
+                    let fractionalProgress = Double(self.timer)/200.0
+                    
+                    if (fractionalProgress <= 1){
+                        self.progressCircle.progress = fractionalProgress
+                        self.progressLabel.text = ("\(20-(self.timer/10))")
+                    }
+                })
+                
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                    self.progressCircle.progress = 1
+                    self.progressLabel.text = ("0")
+            })
+            
+            if OhShitLock.sharedInstance.isLocked() {
+                var url:NSURL = NSURL(string: "tel://2179941016")!
+                UIApplication.sharedApplication().openURL(url)
+            }
+        })
+    }
+    
+    @IBAction func timerTouchDown(sender: AnyObject) {
+        timerPressed = true
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+            for i in 0..<200 {
+                if (self.timerPressed && OhShitLock.sharedInstance.isLocked()){
+                    self.velocity+=self.acceleration
+                    usleep(self.sleepTime)
+                }
+                else{
+                    break
+                }
+            }
+        })
+    }
+    
+    @IBAction func timerTouchUp(sender: AnyObject) {
+        timerPressed = false
+        velocity = 1
     }
     
     func clear(){

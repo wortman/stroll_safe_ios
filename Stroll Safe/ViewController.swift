@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 // Lets the time display as 2.00 and not 2
 extension Float {
@@ -20,7 +21,6 @@ class ViewController: UIViewController {
         case START, THUMB, RELEASE,SHAKE
     }
     var mode = state.START;
-    
     
     @IBOutlet weak var titleMain: UILabel!
     @IBOutlet weak var titleSub: UILabel!
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 
         }
     }*/
-    
+    var passcode: String = ""
     
     @IBAction func thumbDown(sender: UIButton) {
         enterThumbState()
@@ -139,13 +139,12 @@ class ViewController: UIViewController {
                 })
             }
             if (self.mode == state.RELEASE){
-                OhShitLock.sharedInstance.lock("1234")
+                OhShitLock.sharedInstance.lock(self.passcode)
                 dispatch_async(dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("lockdownSegue", sender: nil)
-                })            }
-
+                })
+            }
         })
-        
     }
     
     func enterShakeState(){
@@ -199,6 +198,38 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         enterStartState()
+        
+        // Retreive the managedObjectContext from AppDelegate
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        
+        let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as Passcode
+        
+        newItem.passcode = "1234"
+        
+        var error : NSError? = nil
+        if !managedObjectContext!.save(&error) {
+            NSLog("Unresolved error \(error), \(error!.userInfo)")
+            abort()
+        }
+        
+        // Create a new fetch request using the LogItem entity
+        let fetchRequest = NSFetchRequest(entityName: "Passcode")
+        
+        let fetchedResults =
+        managedObjectContext!.executeFetchRequest(fetchRequest,
+            error: &error) as [Passcode]?
+        
+        if let results = fetchedResults {
+            self.passcode = results[0].passcode
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+
+        
+        // Execute the fetch request, and cast the results to an array of LogItem objects
+       // if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Passcode] {
+      //      self.passcode = fetchResults[0].passcode
+       // }
     }
 
     override func didReceiveMemoryWarning() {
