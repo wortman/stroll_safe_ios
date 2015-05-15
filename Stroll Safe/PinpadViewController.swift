@@ -82,7 +82,7 @@ class PinpadViewController: UIViewController {
         
         var numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             for filler in numbers {
                 dispatch_async(dispatch_get_main_queue(), {
                     var number = filler as UIView

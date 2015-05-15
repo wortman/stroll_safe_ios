@@ -29,8 +29,8 @@ class OhShitLock {
     *  Returns -- True if the pass unlocked it, false if it was an incorrect password
     */
     func unlock(passwd: NSString) -> Bool{
-        locked = passwd == pass
-        return locked
+        locked = !(passwd == pass)
+        return !locked
     }
     
     func isLocked() -> Bool{
