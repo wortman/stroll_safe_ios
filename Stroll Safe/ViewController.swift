@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if motion == .MotionShake && mode == state.SHAKE {
+            OhShitLock.sharedInstance.lock(self.passcode)
             self.performSegueWithIdentifier("lockdownSegue", sender: nil)
         }
     }
@@ -148,8 +149,8 @@ class ViewController: UIViewController {
                 })
             }
             if (self.mode == state.RELEASE){
-                OhShitLock.sharedInstance.lock(self.passcode)
                 dispatch_async(dispatch_get_main_queue(), {
+                    OhShitLock.sharedInstance.lock(self.passcode)
                     self.performSegueWithIdentifier("lockdownSegue", sender: nil)
                 })
             }

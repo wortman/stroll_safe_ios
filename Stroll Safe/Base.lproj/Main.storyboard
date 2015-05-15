@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="482" id="7qW-gY-Dv5"/>
                                     <constraint firstAttribute="width" constant="288" id="Uyl-vy-R9h"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, ei mazim solet eligendi sea. Eu nec tota everti mnesarchum, ut dicit ceteros alienum eum, te conceptam adolescens pro. Et vix affert noster aperiri, ex mea utroque consequat. Qui indoctum periculis in. Usu te esse praesent hendrerit, malis urbanitas repudiandae mea cu.
+                                <string key="text">Lorem ipsum dolor sit amet, ei mazim solet eligendi sea. Eu nec tota everti mnesarchum, ut dicit ceteros alienum eum, te conceptam adolescens pro. Et vix affert noster aperiri, ex mea utroque consequat. Qui indoctum periculis in. Usu te esse praesent hendrerit, malis urbanitas repudiandae mea cu.
 
 Quando equidem dolorem mel in. Et mea quis impedit. Eu mei meliore mentitum antiopam. His ut nulla diceret instructior. Unum adolescens pro eu.
 
@@ -45,7 +45,7 @@ At debitis phaedrum vim, ne animal impetus pri, vide inani paulo ex cum. Id duo 
 
 Utroque atomorum ocurreret duo ut. Pro agam esse et, te movet aliquip sit, cum saperet propriae voluptatibus cu. Duo zril nusquam ei. Pertinacia liberavisse necessitatibus quo at, labore voluptatibus in vis, ex ornatus noluisse vix. Qui altera iuvaret ea, eu his gloriatur constituam. Electram torquatos scripserit ex quo. Eleifend splendide temporibus ei his.
 
-Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. Ad mei tota vidisse mentitum, ut vix vidisse mediocritatem. In porro graecis est, id aperiri percipitur his, eros quodsi te eos. Ad vel mutat erant cotidieque, enim luptatum urbanitas eu usu. Integre verterem interpretaris an duo, ex invidunt volutpat similique vim, vim suscipit splendide ad.</mutableString>
+Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. Ad mei tota vidisse mentitum, ut vix vidisse mediocritatem. In porro graecis est, id aperiri percipitur his, eros quodsi te eos. Ad vel mutat erant cotidieque, enim luptatum urbanitas eu usu. Integre verterem interpretaris an duo, ex invidunt volutpat similique vim, vim suscipit splendide ad.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
