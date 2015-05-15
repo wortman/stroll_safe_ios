@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         enterStartState()
         
         // Retreive the managedObjectContext from AppDelegate
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectCosntext
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest(entityName: "Passcode")
@@ -218,7 +218,7 @@ class ViewController: UIViewController {
             }
             else{
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.performSegueWithIdentifier("setPassSegue", sender: nil)
+                    self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
                 })
             }
         }

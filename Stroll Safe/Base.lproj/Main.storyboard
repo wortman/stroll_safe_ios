@@ -5,10 +5,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Terms View Controller-->
         <scene sceneID="boV-Dt-H9M">
             <objects>
-                <viewController id="bWi-6g-m7W" sceneMemberID="viewController">
+                <viewController id="bWi-6g-m7W" customClass="TermsViewController" customModule="Stroll_Safe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aEf-o3-uGh"/>
                         <viewControllerLayoutGuide type="bottom" id="6ja-uk-Tcc"/>
@@ -16,13 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="0yC-5F-3da">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evC-fH-9eH">
+                                <rect key="frame" x="185" y="518" width="119" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="FqE-YK-MNF"/>
+                                    <constraint firstAttribute="height" constant="30" id="nIy-Oi-WxP"/>
+                                </constraints>
+                                <state key="normal" title="I Agree, Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptTerms:" destination="bWi-6g-m7W" eventType="touchUpInside" id="I7B-iA-sCH"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6j-94-mZ7">
+                                <rect key="frame" x="16" y="28" width="288" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="482" id="7qW-gY-Dv5"/>
+                                    <constraint firstAttribute="width" constant="288" id="Uyl-vy-R9h"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, ei mazim solet eligendi sea. Eu nec tota everti mnesarchum, ut dicit ceteros alienum eum, te conceptam adolescens pro. Et vix affert noster aperiri, ex mea utroque consequat. Qui indoctum periculis in. Usu te esse praesent hendrerit, malis urbanitas repudiandae mea cu.
+
+Quando equidem dolorem mel in. Et mea quis impedit. Eu mei meliore mentitum antiopam. His ut nulla diceret instructior. Unum adolescens pro eu.
+
+At debitis phaedrum vim, ne animal impetus pri, vide inani paulo ex cum. Id duo inani officiis, te cum partem eirmod, pro tation patrioque eu. At eam menandri mediocrem, mei stet affert probatus ex. His ea etiam augue. Nam facer oblique invenire ad, libris animal laboramus id mea.
+
+Utroque atomorum ocurreret duo ut. Pro agam esse et, te movet aliquip sit, cum saperet propriae voluptatibus cu. Duo zril nusquam ei. Pertinacia liberavisse necessitatibus quo at, labore voluptatibus in vis, ex ornatus noluisse vix. Qui altera iuvaret ea, eu his gloriatur constituam. Electram torquatos scripserit ex quo. Eleifend splendide temporibus ei his.
+
+Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. Ad mei tota vidisse mentitum, ut vix vidisse mediocritatem. In porro graecis est, id aperiri percipitur his, eros quodsi te eos. Ad vel mutat erant cotidieque, enim luptatum urbanitas eu usu. Integre verterem interpretaris an duo, ex invidunt volutpat similique vim, vim suscipit splendide ad.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p6j-94-mZ7" firstAttribute="top" secondItem="0yC-5F-3da" secondAttribute="top" constant="28" id="HRf-D9-dCK"/>
+                            <constraint firstAttribute="centerX" secondItem="p6j-94-mZ7" secondAttribute="centerX" id="mNf-48-ke1"/>
+                            <constraint firstItem="evC-fH-9eH" firstAttribute="top" secondItem="p6j-94-mZ7" secondAttribute="top" constant="490" id="rsa-GL-h7s"/>
+                            <constraint firstAttribute="centerX" secondItem="evC-fH-9eH" secondAttribute="centerX" constant="-84.5" id="wCj-bw-wdL"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="acceptButton" destination="evC-fH-9eH" id="DVN-Nx-HGS"/>
+                        <segue destination="PaD-Ot-r0Q" kind="show" identifier="setPassSegue" id="dVi-UD-bLE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SD-lj-lYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-712" y="239"/>
+            <point key="canvasLocation" x="-634" y="239"/>
         </scene>
         <!--Set Passcode View Controller-->
         <scene sceneID="uKC-ym-7za">
@@ -207,7 +251,7 @@
                         <outlet property="titleMain" destination="KOv-yq-ZNo" id="rCn-LQ-4xC"/>
                         <outlet property="titleSub" destination="pa5-dg-QGN" id="ejg-Zk-aqX"/>
                         <segue destination="Fm8-VZ-o5H" kind="show" identifier="lockdownSegue" id="Ik0-4p-X00"/>
-                        <segue destination="PaD-Ot-r0Q" kind="show" identifier="setPassSegue" id="gi0-4E-eza"/>
+                        <segue destination="bWi-6g-m7W" kind="show" identifier="firstTimeUserSegue" id="eSv-Dr-Uxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -217,7 +261,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="307" y="239"/>
+            <point key="canvasLocation" x="291" y="239"/>
         </scene>
         <!--Lockdown Controller View Controller-->
         <scene sceneID="GxM-Ud-cyR">

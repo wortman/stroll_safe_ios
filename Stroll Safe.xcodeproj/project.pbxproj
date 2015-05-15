@@ -24,6 +24,7 @@
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
 		BFD7C97F1ABE3D8200D973DF /* finger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97C1ABE3D8200D973DF /* finger_icon.png */; };
 		BFD7C9801ABE3D8200D973DF /* shake_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97D1ABE3D8200D973DF /* shake_icon.png */; };
+		FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
 		BFD7C97C1ABE3D8200D973DF /* finger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_icon.png; sourceTree = "<group>"; };
 		BFD7C97D1ABE3D8200D973DF /* shake_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake_icon.png; sourceTree = "<group>"; };
+		FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = ../TermsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				BFD7C97A1ABE3D5000D973DF /* images */,
 				ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */,
+				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
 				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
 				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
 				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */,
 				BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */,
 				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
 				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
