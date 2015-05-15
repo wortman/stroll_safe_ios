@@ -31,9 +31,9 @@ class SetPasscodeViewController: UIViewController,ViewWithPinpadController {
             // They entered the second password, verify it's the same as the first one they entered
             if firstPass == pass {
                 // Set the password in memory
-                let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+                let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
                 
-                let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as Passcode
+                let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as! Passcode
                 
                 var error : NSError? = nil
                 if !managedObjectContext!.save(&error) {

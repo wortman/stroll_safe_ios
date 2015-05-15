@@ -50,7 +50,7 @@ class PinpadViewController: UIViewController {
         return passString
     }
     
-    func setPassField(value: Double){
+    func setPass(value: Double){
         passField[currentIdx] = value
         currentIdx++
         
@@ -63,8 +63,8 @@ class PinpadViewController: UIViewController {
             third.hidden = false
         case 4:
             fourth.hidden = false
-            let parent = self.parentViewController as ViewWithPinpadController
-            if !parent.passEntered(passFieldString()){
+            let parent = self.parentViewController as! ViewWithPinpadController
+            if !parent.passEntered(passFieldString() as String){
                 shake()
             }
             clear()
@@ -101,40 +101,40 @@ class PinpadViewController: UIViewController {
 
     
     @IBAction func buttonOne(sender: AnyObject) {
-        setPassField(1)
+        setPass(1)
     }
     
     @IBAction func buttonTwo(sender: AnyObject) {
-        setPassField(2)
+        setPass(2)
     }
 
     @IBAction func buttonThree(sender: AnyObject) {
-        setPassField(3)
+        setPass(3)
     }
     
     @IBAction func buttonFour(sender: AnyObject) {
-        setPassField(4)
+        setPass(4)
     }
     
     
     @IBAction func buttonFive(sender: AnyObject) {
-        setPassField(5)
+        setPass(5)
     }
     
     @IBAction func buttonSix(sender: AnyObject) {
-        setPassField(6)
+        setPass(6)
     }
     
     @IBAction func buttonSeven(sender: AnyObject) {
-        setPassField(7)
+        setPass(7)
     }
     
     @IBAction func buttonEight(sender: AnyObject) {
-        setPassField(8)
+        setPass(8)
     }
     
     @IBAction func buttonNine(sender: AnyObject) {
-        setPassField(9)
+        setPass(9)
     }
     
     @IBAction func buttonClear(sender: AnyObject) {
@@ -147,7 +147,7 @@ class PinpadViewController: UIViewController {
     }
     
     @IBAction func buttonZero(sender: AnyObject) {
-        setPassField(0)
+        setPass(0)
     }
     
     @IBAction func buttonBack(sender: AnyObject) {

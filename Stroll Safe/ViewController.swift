@@ -12,7 +12,7 @@ import CoreData
 // Lets the time display as 2.00 and not 2
 extension Float {
     func format(f: String) -> String {
-        return NSString(format: "%\(f)f", self)
+        return NSString(format: "%\(f)f", self) as String
     }
 }
 
@@ -65,21 +65,21 @@ class ViewController: UIViewController {
     
     @IBAction func thumbUpOutside(sender: AnyObject, forEvent event: UIEvent) {
         
-        let buttonView = sender as UIView
+        let buttonView = sender as! UIView
         let mainView = self.view
         
             // get any touch on the buttonView
-            if let touch = event.touchesForView(buttonView)?.anyObject() as? UITouch {
-                let location = touch.locationInView(mainView)
+         if let touch = event.touchesForView(buttonView)?.first as? UITouch {
+            let location = touch.locationInView(mainView)
                 
-                let frame = shake.frame
-                let minX = CGRectGetMinX(frame)
-                let maxX = CGRectGetMaxX(frame)
-                let minY = CGRectGetMinY(frame)
-                let maxY = CGRectGetMaxY(frame)
-                if ((location.x < minX || location.x > maxX) ||
-                    (location.y < minY || location.y > maxY)){
-                        enterReleaseState()
+            let frame = shake.frame
+            let minX = CGRectGetMinX(frame)
+            let maxX = CGRectGetMaxX(frame)
+            let minY = CGRectGetMinY(frame)
+            let maxY = CGRectGetMaxY(frame)
+            if ((location.x < minX || location.x > maxX) ||
+                (location.y < minY || location.y > maxY)){
+                    enterReleaseState()
                 }else{
                     enterShakeState()
                 }
@@ -160,8 +160,8 @@ class ViewController: UIViewController {
     }
     
     func changeTitle(title: NSString,  sub: NSString){
-        titleMain.text = title
-        titleSub.text = sub
+        titleMain.text = title as String
+        titleSub.text = sub as String
     }
     
     func setProgressVisibility(visibility: Bool){
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         enterStartState()
         
         // Retreive the managedObjectContext from AppDelegate
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectCosntext
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest(entityName: "Passcode")
@@ -208,11 +208,12 @@ class ViewController: UIViewController {
         var error : NSError? = nil
         let fetchedResults =
         managedObjectContext!.executeFetchRequest(fetchRequest,
-            error: &error) as [Passcode]?
+            error: &error) as! [Passcode]?
         
         // Store the pass in our global pass var, if it's there. Otherwise, segue to the setPass scene
         if let results = fetchedResults {
-            if !results.isEmpty {
+            if (!results.isEmpty && results[0].passcode != "empty"){
+                var result = results[0];
                 self.passcode = results[0].passcode
             }
             else{

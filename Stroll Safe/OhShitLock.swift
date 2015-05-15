@@ -19,7 +19,7 @@ class OhShitLock {
     
     // Locks the lock, returns true if locked
     func lock(passwd: NSString) -> Bool{
-        pass = passwd
+        pass = passwd as String
         locked = true
         return locked
     }
