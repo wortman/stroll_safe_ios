@@ -32,6 +32,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var shakeDesc: UILabel!
     @IBOutlet weak var thumbDesc: UILabel!
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if motion == .MotionShake && mode == state.SHAKE {
+            self.performSegueWithIdentifier("lockdownSegue", sender: nil)
+        }
+    }
 
     @IBAction func shakeLongPress(sender: AnyObject) {
         if sender.state == UIGestureRecognizerState.Began
