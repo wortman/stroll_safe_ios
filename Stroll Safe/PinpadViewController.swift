@@ -24,6 +24,11 @@ class PinpadViewController: UIViewController {
     var passField = [Double](count: 4, repeatedValue: 0.0)
     var currentIdx = 0;
 
+    var enteredFn: (String) -> () = { (String) -> () in }
+    
+    func setEnteredFunction(fn: (String) -> ()) {
+        enteredFn = fn
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +56,10 @@ class PinpadViewController: UIViewController {
     }
     
     func setPass(value: Double){
-        passField[currentIdx] = value
-        currentIdx++
+        if (currentIdx < passField.count){
+            passField[currentIdx] = value
+            currentIdx++
+        }
         
         switch currentIdx{
         case 1:
@@ -63,23 +70,15 @@ class PinpadViewController: UIViewController {
             third.hidden = false
         case 4:
             fourth.hidden = false
-            let parent = self.parentViewController as! ViewWithPinpadController
-            if !parent.passEntered(passFieldString() as String){
-                shake()
-            }
-            clear()
-            
-        case 5:
-            currentIdx--
+            enteredFn(getCurrentPass() as String)
+
         default:
             print("Invalid")
         }
         
     }
     
-    func shake(){
-        clear()
-        
+    func shake(){        
         let numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -97,6 +96,10 @@ class PinpadViewController: UIViewController {
                 })
             }
         })
+    }
+    
+    func getCurrentPass() -> NSString {
+        return passFieldString()
     }
 
     
@@ -161,6 +164,8 @@ class PinpadViewController: UIViewController {
             second.hidden = true
         case 3:
             third.hidden = true
+        case 4:
+            fourth.hidden = true
         default:
             print("Invalid")
         }
