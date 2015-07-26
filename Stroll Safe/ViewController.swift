@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 // Lets the time display as 2.00 and not 2
 extension Float {

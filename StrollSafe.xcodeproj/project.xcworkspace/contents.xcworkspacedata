@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Stroll Safe.xcodeproj">
+      location = "self:/Users/lyndaprince/Documents/stroll_safe_ios/StrollSafe.xcodeproj">
    </FileRef>
 </Workspace>

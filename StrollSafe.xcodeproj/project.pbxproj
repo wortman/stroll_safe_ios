@@ -13,7 +13,6 @@
 		ACDDF2EB1ABD57F60029DF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2E91ABD57F60029DF5D /* Main.storyboard */; };
 		ACDDF2ED1ABD57F60029DF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */; };
 		ACDDF2F01ABD57F60029DF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */; };
-		ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */; };
 		BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0155891AC2094E00BED16A /* CircleProgressView.swift */; };
 		BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25169F1AC368D200024CF6 /* Passcode.swift */; };
 		BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A11AC3927300024CF6 /* PinpadViewController.swift */; };
@@ -24,30 +23,106 @@
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
 		BFD7C97F1ABE3D8200D973DF /* finger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97C1ABE3D8200D973DF /* finger_icon.png */; };
 		BFD7C9801ABE3D8200D973DF /* shake_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97D1ABE3D8200D973DF /* shake_icon.png */; };
+		FA0D97F21B655D410038788E /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D97F11B655D410038788E /* ViewControllerSpec.swift */; };
+		FA0D97F91B655D640038788E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0D97C21B655C770038788E /* Quick.framework */; };
+		FA0D97FA1B655D680038788E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0D97DE1B655C860038788E /* Nimble.framework */; };
+		FA0D98051B6562A70038788E /* OhShitLockSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D98041B6562A70038788E /* OhShitLockSpec.swift */; };
+		FA0D98061B6563840038788E /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
+		FA0D98071B6566930038788E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */; };
 		FA59FE5C1B64196300F27162 /* Stroll_SafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */; };
 		FA59FE651B641D2F00F27162 /* LockUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE641B641D2F00F27162 /* LockUtil.swift */; };
 		FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */ = {
+		FA0D97BB1B655C770038788E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
-			remoteInfo = "Stroll Safe";
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DAEB6B8E1943873100289F44;
+			remoteInfo = "Quick-OSX";
 		};
-		FA59FE5E1B64196300F27162 /* PBXContainerItemProxy */ = {
+		FA0D97BD1B655C770038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DAEB6B991943873100289F44;
+			remoteInfo = "Quick-OSXTests";
+		};
+		FA0D97BF1B655C770038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5663E81A4C8D8500193C88;
+			remoteInfo = "QuickFocused-OSXTests";
+		};
+		FA0D97C11B655C770038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A5D117C19473F2100F6D13D;
+			remoteInfo = "Quick-iOS";
+		};
+		FA0D97C31B655C770038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A5D118619473F2100F6D13D;
+			remoteInfo = "Quick-iOSTests";
+		};
+		FA0D97C51B655C770038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA9876B21A4C70EB0004AA17;
+			remoteInfo = "QuickFocused-iOSTests";
+		};
+		FA0D97DD1B655C860038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97D61B655C850038788E /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F1A74291940169200FFFC47;
+			remoteInfo = "Nimble-iOS";
+		};
+		FA0D97DF1B655C860038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97D61B655C850038788E /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F1A74341940169200FFFC47;
+			remoteInfo = "Nimble-iOSTests";
+		};
+		FA0D97E11B655C860038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97D61B655C850038788E /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F925EAD195C0D6300ED456B;
+			remoteInfo = "Nimble-OSX";
+		};
+		FA0D97E31B655C860038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0D97D61B655C850038788E /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F925EB7195C0D6300ED456B;
+			remoteInfo = "Nimble-OSXTests";
+		};
+		FA0D97E91B655D060038788E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
-			remoteInfo = "Stroll Safe";
+			remoteInfo = StrollSafe;
+		};
+		FA0D97F41B655D410038788E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
+			remoteInfo = StrollSafe;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stroll Safe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDDF2DD1ABD57F50029DF5D /* StrollSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrollSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDDF2E11ABD57F50029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACDDF2E51ABD57F60029DF5D /* Stroll_Safe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stroll_Safe.xcdatamodel; sourceTree = "<group>"; };
@@ -55,9 +130,6 @@
 		ACDDF2EA1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACDDF2EF1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stroll SafeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACDDF2FA1ABD57F60029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeTests.swift; sourceTree = "<group>"; };
 		BF0155891AC2094E00BED16A /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		BF25169F1AC368D200024CF6 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		BF2516A11AC3927300024CF6 /* PinpadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +140,13 @@
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
 		BFD7C97C1ABE3D8200D973DF /* finger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_icon.png; sourceTree = "<group>"; };
 		BFD7C97D1ABE3D8200D973DF /* shake_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake_icon.png; sourceTree = "<group>"; };
-		FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stroll SafeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0D97B21B655C770038788E /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Vendor/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
+		FA0D97D61B655C850038788E /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Vendor/Quick/Externals/Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
+		FA0D97EF1B655D410038788E /* StrollSafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrollSafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0D97F11B655D410038788E /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
+		FA0D97F31B655D410038788E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0D98041B6562A70038788E /* OhShitLockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLockSpec.swift; sourceTree = "<group>"; };
+		FA59FE591B64196200F27162 /* StrollSafe.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrollSafe.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeUITests.swift; sourceTree = "<group>"; };
 		FA59FE5D1B64196300F27162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA59FE641B641D2F00F27162 /* LockUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockUtil.swift; sourceTree = "<group>"; };
@@ -83,10 +161,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACDDF2F21ABD57F60029DF5D /* Frameworks */ = {
+		FA0D97EC1B655D410038788E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0D97FA1B655D680038788E /* Nimble.framework in Frameworks */,
+				FA0D97F91B655D640038788E /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,19 +184,21 @@
 			isa = PBXGroup;
 			children = (
 				FA59FE5A1B64196300F27162 /* Stroll SafeUITests */,
+				FA0D97F01B655D410038788E /* StrollSafeTests */,
 				BF25169B1AC3627C00024CF6 /* Frameworks */,
 				ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */,
-				ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */,
 				ACDDF2DE1ABD57F50029DF5D /* Products */,
+				FA0D97D61B655C850038788E /* Nimble.xcodeproj */,
+				FA0D97B21B655C770038788E /* Quick.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
 		ACDDF2DE1ABD57F50029DF5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */,
-				ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */,
-				FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */,
+				ACDDF2DD1ABD57F50029DF5D /* StrollSafe.app */,
+				FA59FE591B64196200F27162 /* StrollSafe.xctest */,
+				FA0D97EF1B655D410038788E /* StrollSafeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,16 +206,10 @@
 		ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */ = {
 			isa = PBXGroup;
 			children = (
+				FA1CBC801B6460F200B81D15 /* Util */,
+				FA1CBC7F1B6460B300B81D15 /* View Controllers */,
 				BFD7C97A1ABE3D5000D973DF /* images */,
 				ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */,
-				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
-				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
-				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
-				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
-				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
-				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
-				BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */,
-				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
 				ACDDF2E91ABD57F60029DF5D /* Main.storyboard */,
 				ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */,
 				ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */,
@@ -148,23 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				ACDDF2E11ABD57F50029DF5D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */ = {
-			isa = PBXGroup;
-			children = (
-				ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */,
-				ACDDF2F91ABD57F60029DF5D /* Supporting Files */,
-			);
-			path = "Stroll SafeTests";
-			sourceTree = "<group>";
-		};
-		ACDDF2F91ABD57F60029DF5D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ACDDF2FA1ABD57F60029DF5D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,6 +244,78 @@
 				BFD7C97D1ABE3D8200D973DF /* shake_icon.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		FA0D97B31B655C770038788E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D97BC1B655C770038788E /* Quick.framework */,
+				FA0D97BE1B655C770038788E /* Quick-OSXTests.xctest */,
+				FA0D97C01B655C770038788E /* QuickFocused-OSXTests.xctest */,
+				FA0D97C21B655C770038788E /* Quick.framework */,
+				FA0D97C41B655C770038788E /* Quick-iOSTests.xctest */,
+				FA0D97C61B655C770038788E /* QuickFocused-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0D97D71B655C850038788E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D97DE1B655C860038788E /* Nimble.framework */,
+				FA0D97E01B655C860038788E /* NimbleTests.xctest */,
+				FA0D97E21B655C860038788E /* Nimble.framework */,
+				FA0D97E41B655C860038788E /* NimbleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0D97F01B655D410038788E /* StrollSafeTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D98031B6562990038788E /* Util */,
+				FA0D98021B6562910038788E /* View Controllers */,
+				FA0D97F11B655D410038788E /* ViewControllerSpec.swift */,
+				FA0D97F31B655D410038788E /* Info.plist */,
+			);
+			path = StrollSafeTests;
+			sourceTree = "<group>";
+		};
+		FA0D98021B6562910038788E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FA0D98031B6562990038788E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D98041B6562A70038788E /* OhShitLockSpec.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FA1CBC7F1B6460B300B81D15 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */,
+				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
+				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
+				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
+				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
+				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FA1CBC801B6460F200B81D15 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
+				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		FA59FE5A1B64196300F27162 /* Stroll SafeUITests */ = {
@@ -208,9 +339,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */ = {
+		ACDDF2DC1ABD57F50029DF5D /* StrollSafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll Safe" */;
+			buildConfigurationList = ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "StrollSafe" */;
 			buildPhases = (
 				ACDDF2D91ABD57F50029DF5D /* Sources */,
 				ACDDF2DA1ABD57F50029DF5D /* Frameworks */,
@@ -220,32 +351,32 @@
 			);
 			dependencies = (
 			);
-			name = "Stroll Safe";
+			name = StrollSafe;
 			productName = "Stroll Safe";
-			productReference = ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */;
+			productReference = ACDDF2DD1ABD57F50029DF5D /* StrollSafe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ACDDF2F41ABD57F60029DF5D /* Stroll SafeTests */ = {
+		FA0D97EE1B655D410038788E /* StrollSafeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACDDF3021ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll SafeTests" */;
+			buildConfigurationList = FA0D97F61B655D410038788E /* Build configuration list for PBXNativeTarget "StrollSafeTests" */;
 			buildPhases = (
-				ACDDF2F11ABD57F60029DF5D /* Sources */,
-				ACDDF2F21ABD57F60029DF5D /* Frameworks */,
-				ACDDF2F31ABD57F60029DF5D /* Resources */,
+				FA0D97EB1B655D410038788E /* Sources */,
+				FA0D97EC1B655D410038788E /* Frameworks */,
+				FA0D97ED1B655D410038788E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ACDDF2F71ABD57F60029DF5D /* PBXTargetDependency */,
+				FA0D97F51B655D410038788E /* PBXTargetDependency */,
 			);
-			name = "Stroll SafeTests";
-			productName = "Stroll SafeTests";
-			productReference = ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */;
+			name = StrollSafeTests;
+			productName = StrollSafeTests;
+			productReference = FA0D97EF1B655D410038788E /* StrollSafeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FA59FE581B64196200F27162 /* Stroll SafeUITests */ = {
+		FA59FE581B64196200F27162 /* StrollSafeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "Stroll SafeUITests" */;
+			buildConfigurationList = FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "StrollSafeUITests" */;
 			buildPhases = (
 				FA59FE551B64196200F27162 /* Sources */,
 				FA59FE561B64196200F27162 /* Frameworks */,
@@ -254,11 +385,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FA59FE5F1B64196300F27162 /* PBXTargetDependency */,
+				FA0D97EA1B655D060038788E /* PBXTargetDependency */,
 			);
-			name = "Stroll SafeUITests";
+			name = StrollSafeUITests;
 			productName = "Stroll SafeUITests";
-			productReference = FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */;
+			productReference = FA59FE591B64196200F27162 /* StrollSafe.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -275,8 +406,8 @@
 					ACDDF2DC1ABD57F50029DF5D = {
 						CreatedOnToolsVersion = 6.2;
 					};
-					ACDDF2F41ABD57F60029DF5D = {
-						CreatedOnToolsVersion = 6.2;
+					FA0D97EE1B655D410038788E = {
+						CreatedOnToolsVersion = 7.0;
 						TestTargetID = ACDDF2DC1ABD57F50029DF5D;
 					};
 					FA59FE581B64196200F27162 = {
@@ -285,7 +416,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "Stroll Safe" */;
+			buildConfigurationList = ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "StrollSafe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -296,14 +427,97 @@
 			mainGroup = ACDDF2D41ABD57F50029DF5D;
 			productRefGroup = ACDDF2DE1ABD57F50029DF5D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA0D97D71B655C850038788E /* Products */;
+					ProjectRef = FA0D97D61B655C850038788E /* Nimble.xcodeproj */;
+				},
+				{
+					ProductGroup = FA0D97B31B655C770038788E /* Products */;
+					ProjectRef = FA0D97B21B655C770038788E /* Quick.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */,
-				ACDDF2F41ABD57F60029DF5D /* Stroll SafeTests */,
-				FA59FE581B64196200F27162 /* Stroll SafeUITests */,
+				ACDDF2DC1ABD57F50029DF5D /* StrollSafe */,
+				FA59FE581B64196200F27162 /* StrollSafeUITests */,
+				FA0D97EE1B655D410038788E /* StrollSafeTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA0D97BC1B655C770038788E /* Quick.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quick.framework;
+			remoteRef = FA0D97BB1B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97BE1B655C770038788E /* Quick-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Quick-OSXTests.xctest";
+			remoteRef = FA0D97BD1B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97C01B655C770038788E /* QuickFocused-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "QuickFocused-OSXTests.xctest";
+			remoteRef = FA0D97BF1B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97C21B655C770038788E /* Quick.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quick.framework;
+			remoteRef = FA0D97C11B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97C41B655C770038788E /* Quick-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Quick-iOSTests.xctest";
+			remoteRef = FA0D97C31B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97C61B655C770038788E /* QuickFocused-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "QuickFocused-iOSTests.xctest";
+			remoteRef = FA0D97C51B655C770038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97DE1B655C860038788E /* Nimble.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Nimble.framework;
+			remoteRef = FA0D97DD1B655C860038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97E01B655C860038788E /* NimbleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NimbleTests.xctest;
+			remoteRef = FA0D97DF1B655C860038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97E21B655C860038788E /* Nimble.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Nimble.framework;
+			remoteRef = FA0D97E11B655C860038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0D97E41B655C860038788E /* NimbleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NimbleTests.xctest;
+			remoteRef = FA0D97E31B655C860038788E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		ACDDF2DB1ABD57F50029DF5D /* Resources */ = {
@@ -319,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACDDF2F31ABD57F60029DF5D /* Resources */ = {
+		FA0D97ED1B655D410038788E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,11 +568,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACDDF2F11ABD57F60029DF5D /* Sources */ = {
+		FA0D97EB1B655D410038788E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */,
+				FA0D98061B6563840038788E /* OhShitLock.swift in Sources */,
+				FA0D97F21B655D410038788E /* ViewControllerSpec.swift in Sources */,
+				FA0D98071B6566930038788E /* AppDelegate.swift in Sources */,
+				FA0D98051B6562A70038788E /* OhShitLockSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,15 +591,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ACDDF2F71ABD57F60029DF5D /* PBXTargetDependency */ = {
+		FA0D97EA1B655D060038788E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */;
-			targetProxy = ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */;
+			target = ACDDF2DC1ABD57F50029DF5D /* StrollSafe */;
+			targetProxy = FA0D97E91B655D060038788E /* PBXContainerItemProxy */;
 		};
-		FA59FE5F1B64196300F27162 /* PBXTargetDependency */ = {
+		FA0D97F51B655D410038788E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */;
-			targetProxy = FA59FE5E1B64196300F27162 /* PBXContainerItemProxy */;
+			target = ACDDF2DC1ABD57F50029DF5D /* StrollSafe */;
+			targetProxy = FA0D97F41B655D410038788E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +642,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -468,6 +686,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -489,10 +708,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StrollSafe;
 			};
 			name = Debug;
 		};
@@ -501,46 +721,41 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StrollSafe;
 			};
 			name = Release;
 		};
-		ACDDF3031ABD57F60029DF5D /* Debug */ = {
+		FA0D97F71B655D410038788E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StrollSafeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.illinois.StrollSafeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrollSafe.app/StrollSafe";
 			};
 			name = Debug;
 		};
-		ACDDF3041ABD57F60029DF5D /* Release */ = {
+		FA0D97F81B655D410038788E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StrollSafeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.illinois.StrollSafeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrollSafe.app/StrollSafe";
 			};
 			name = Release;
 		};
@@ -553,8 +768,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.Stroll-SafeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Stroll Safe";
+				PRODUCT_NAME = StrollSafe;
+				TEST_TARGET_NAME = StrollSafe;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -568,8 +783,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.Stroll-SafeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Stroll Safe";
+				PRODUCT_NAME = StrollSafe;
+				TEST_TARGET_NAME = StrollSafe;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
@@ -577,7 +792,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "Stroll Safe" */ = {
+		ACDDF2D81ABD57F50029DF5D /* Build configuration list for PBXProject "StrollSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACDDF2FD1ABD57F60029DF5D /* Debug */,
@@ -586,7 +801,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll Safe" */ = {
+		ACDDF2FF1ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "StrollSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACDDF3001ABD57F60029DF5D /* Debug */,
@@ -595,22 +810,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACDDF3021ABD57F60029DF5D /* Build configuration list for PBXNativeTarget "Stroll SafeTests" */ = {
+		FA0D97F61B655D410038788E /* Build configuration list for PBXNativeTarget "StrollSafeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACDDF3031ABD57F60029DF5D /* Debug */,
-				ACDDF3041ABD57F60029DF5D /* Release */,
+				FA0D97F71B655D410038788E /* Debug */,
+				FA0D97F81B655D410038788E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "Stroll SafeUITests" */ = {
+		FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "StrollSafeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA59FE611B64196300F27162 /* Debug */,
 				FA59FE621B64196300F27162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
