@@ -2,7 +2,7 @@
 //  ViewWithPinpadController.swift
 //  Stroll Safe
 //
-//  Created by christine prince on 3/25/15.
+//  Created by Noah prince on 3/25/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 

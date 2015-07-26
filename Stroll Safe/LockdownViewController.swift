@@ -1,5 +1,5 @@
 //
-//  LockdownControllerViewController.swift
+//  LockdownViewController.swift
 //  Stroll Safe
 //
 //  Created by christine prince on 3/21/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LockdownControllerViewController: UIViewController,ViewWithPinpadController {
+class LockdownViewController: UIViewController,ViewWithPinpadController {
 
     @IBOutlet weak var progressCircle: CircleProgressView!
     @IBOutlet weak var progressLabel: UILabel!

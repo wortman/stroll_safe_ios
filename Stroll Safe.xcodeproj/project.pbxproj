@@ -19,7 +19,7 @@
 		BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A11AC3927300024CF6 /* PinpadViewController.swift */; };
 		BF2516A41AC39D5A00024CF6 /* ViewWithPinpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */; };
 		BF2516A61AC3A4C600024CF6 /* SetPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */; };
-		BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */; };
+		BF477D421ABE782D005D76E8 /* LockdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D411ABE782D005D76E8 /* LockdownViewController.swift */; };
 		BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
 		BFD7C97F1ABE3D8200D973DF /* finger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97C1ABE3D8200D973DF /* finger_icon.png */; };
@@ -27,6 +27,10 @@
 		FA59FE5C1B64196300F27162 /* Stroll_SafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */; };
 		FA59FE651B641D2F00F27162 /* LockUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE641B641D2F00F27162 /* LockUtil.swift */; };
 		FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */; };
+		FA9E547D1B65738D005267F9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E54691B657356005267F9 /* Quick.framework */; };
+		FA9E547E1B657391005267F9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E54761B657362005267F9 /* Nimble.framework */; };
+		FA9E54821B6573B1005267F9 /* OhShitLockSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E54811B6573B1005267F9 /* OhShitLockSpec.swift */; };
+		FA9E54851B65743A005267F9 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,76 @@
 			proxyType = 1;
 			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
 			remoteInfo = "Stroll Safe";
+		};
+		FA9E54621B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DAEB6B8E1943873100289F44;
+			remoteInfo = "Quick-OSX";
+		};
+		FA9E54641B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DAEB6B991943873100289F44;
+			remoteInfo = "Quick-OSXTests";
+		};
+		FA9E54661B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5663E81A4C8D8500193C88;
+			remoteInfo = "QuickFocused-OSXTests";
+		};
+		FA9E54681B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A5D117C19473F2100F6D13D;
+			remoteInfo = "Quick-iOS";
+		};
+		FA9E546A1B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A5D118619473F2100F6D13D;
+			remoteInfo = "Quick-iOSTests";
+		};
+		FA9E546C1B657356005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA9876B21A4C70EB0004AA17;
+			remoteInfo = "QuickFocused-iOSTests";
+		};
+		FA9E54751B657362005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E546E1B657362005267F9 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F1A74291940169200FFFC47;
+			remoteInfo = "Nimble-iOS";
+		};
+		FA9E54771B657362005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E546E1B657362005267F9 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F1A74341940169200FFFC47;
+			remoteInfo = "Nimble-iOSTests";
+		};
+		FA9E54791B657362005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E546E1B657362005267F9 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F925EAD195C0D6300ED456B;
+			remoteInfo = "Nimble-OSX";
+		};
+		FA9E547B1B657362005267F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA9E546E1B657362005267F9 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F925EB7195C0D6300ED456B;
+			remoteInfo = "Nimble-OSXTests";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,7 +137,7 @@
 		BF2516A11AC3927300024CF6 /* PinpadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewController.swift; sourceTree = "<group>"; };
 		BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithPinpadController.swift; sourceTree = "<group>"; };
 		BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasscodeViewController.swift; sourceTree = "<group>"; };
-		BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockdownControllerViewController.swift; sourceTree = "<group>"; };
+		BF477D411ABE782D005D76E8 /* LockdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockdownViewController.swift; sourceTree = "<group>"; };
 		BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLock.swift; sourceTree = "<group>"; };
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
 		BFD7C97C1ABE3D8200D973DF /* finger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_icon.png; sourceTree = "<group>"; };
@@ -73,6 +147,9 @@
 		FA59FE5D1B64196300F27162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA59FE641B641D2F00F27162 /* LockUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockUtil.swift; sourceTree = "<group>"; };
 		FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = ../TermsViewController.swift; sourceTree = "<group>"; };
+		FA9E54591B657355005267F9 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Vendor/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
+		FA9E546E1B657362005267F9 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Vendor/Quick/Externals/Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
+		FA9E54811B6573B1005267F9 /* OhShitLockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLockSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9E547E1B657391005267F9 /* Nimble.framework in Frameworks */,
+				FA9E547D1B65738D005267F9 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +187,8 @@
 				ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */,
 				ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */,
 				ACDDF2DE1ABD57F50029DF5D /* Products */,
+				FA9E546E1B657362005267F9 /* Nimble.xcodeproj */,
+				FA9E54591B657355005267F9 /* Quick.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,16 +205,10 @@
 		ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E54841B65740E005267F9 /* View Controllers */,
+				FA9E54831B6573FD005267F9 /* Util */,
 				BFD7C97A1ABE3D5000D973DF /* images */,
 				ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */,
-				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
-				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
-				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
-				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
-				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
-				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
-				BF477D411ABE782D005D76E8 /* LockdownControllerViewController.swift */,
-				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
 				ACDDF2E91ABD57F60029DF5D /* Main.storyboard */,
 				ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */,
 				ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */,
@@ -155,6 +230,8 @@
 		ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E54801B6573A3005267F9 /* View Controllers */,
+				FA9E547F1B65739E005267F9 /* Util */,
 				ACDDF2FB1ABD57F60029DF5D /* Stroll_SafeTests.swift */,
 				ACDDF2F91ABD57F60029DF5D /* Supporting Files */,
 			);
@@ -203,6 +280,67 @@
 				FA59FE641B641D2F00F27162 /* LockUtil.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		FA9E545A1B657355005267F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E54631B657356005267F9 /* Quick.framework */,
+				FA9E54651B657356005267F9 /* Quick-OSXTests.xctest */,
+				FA9E54671B657356005267F9 /* QuickFocused-OSXTests.xctest */,
+				FA9E54691B657356005267F9 /* Quick.framework */,
+				FA9E546B1B657356005267F9 /* Quick-iOSTests.xctest */,
+				FA9E546D1B657356005267F9 /* QuickFocused-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA9E546F1B657362005267F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E54761B657362005267F9 /* Nimble.framework */,
+				FA9E54781B657362005267F9 /* NimbleTests.xctest */,
+				FA9E547A1B657362005267F9 /* Nimble.framework */,
+				FA9E547C1B657362005267F9 /* NimbleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA9E547F1B65739E005267F9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E54811B6573B1005267F9 /* OhShitLockSpec.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FA9E54801B6573A3005267F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FA9E54831B6573FD005267F9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */,
+				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FA9E54841B65740E005267F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
+				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
+				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
+				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
+				BF477D411ABE782D005D76E8 /* LockdownViewController.swift */,
+				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +434,16 @@
 			mainGroup = ACDDF2D41ABD57F50029DF5D;
 			productRefGroup = ACDDF2DE1ABD57F50029DF5D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA9E546F1B657362005267F9 /* Products */;
+					ProjectRef = FA9E546E1B657362005267F9 /* Nimble.xcodeproj */;
+				},
+				{
+					ProductGroup = FA9E545A1B657355005267F9 /* Products */;
+					ProjectRef = FA9E54591B657355005267F9 /* Quick.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */,
@@ -304,6 +452,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA9E54631B657356005267F9 /* Quick.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quick.framework;
+			remoteRef = FA9E54621B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E54651B657356005267F9 /* Quick-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Quick-OSXTests.xctest";
+			remoteRef = FA9E54641B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E54671B657356005267F9 /* QuickFocused-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "QuickFocused-OSXTests.xctest";
+			remoteRef = FA9E54661B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E54691B657356005267F9 /* Quick.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quick.framework;
+			remoteRef = FA9E54681B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E546B1B657356005267F9 /* Quick-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Quick-iOSTests.xctest";
+			remoteRef = FA9E546A1B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E546D1B657356005267F9 /* QuickFocused-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "QuickFocused-iOSTests.xctest";
+			remoteRef = FA9E546C1B657356005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E54761B657362005267F9 /* Nimble.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Nimble.framework;
+			remoteRef = FA9E54751B657362005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E54781B657362005267F9 /* NimbleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NimbleTests.xctest;
+			remoteRef = FA9E54771B657362005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E547A1B657362005267F9 /* Nimble.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Nimble.framework;
+			remoteRef = FA9E54791B657362005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA9E547C1B657362005267F9 /* NimbleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NimbleTests.xctest;
+			remoteRef = FA9E547B1B657362005267F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		ACDDF2DB1ABD57F50029DF5D /* Resources */ = {
@@ -344,7 +565,7 @@
 				BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */,
 				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
 				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
-				BF477D421ABE782D005D76E8 /* LockdownControllerViewController.swift in Sources */,
+				BF477D421ABE782D005D76E8 /* LockdownViewController.swift in Sources */,
 				ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */,
 				ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */,
 				BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */,
@@ -358,6 +579,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9E54821B6573B1005267F9 /* OhShitLockSpec.swift in Sources */,
+				FA9E54851B65743A005267F9 /* OhShitLock.swift in Sources */,
 				ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +648,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -468,6 +692,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -489,6 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
@@ -501,6 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
@@ -611,6 +838,7 @@
 				FA59FE621B64196300F27162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
