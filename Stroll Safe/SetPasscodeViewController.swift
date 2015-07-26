@@ -36,7 +36,10 @@ class SetPasscodeViewController: UIViewController,ViewWithPinpadController {
                 let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as! Passcode
                 
                 var error : NSError? = nil
-                if !managedObjectContext!.save(&error) {
+                do {
+                    try managedObjectContext!.save()
+                } catch let error1 as NSError {
+                    error = error1
                     NSLog("Unresolved error \(error), \(error!.userInfo)")
                     abort()
                 }

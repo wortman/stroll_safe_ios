@@ -46,7 +46,7 @@ class PinpadViewController: UIViewController {
     }
     
     func passFieldString() -> NSString{
-        var passString = "\(Int(passField[0]))\(Int(passField[1]))\(Int(passField[2]))\(Int(passField[3]))"
+        let passString = "\(Int(passField[0]))\(Int(passField[1]))\(Int(passField[2]))\(Int(passField[3]))"
         return passString
     }
     
@@ -72,7 +72,7 @@ class PinpadViewController: UIViewController {
         case 5:
             currentIdx--
         default:
-            println("Invalid")
+            print("Invalid")
         }
         
     }
@@ -80,12 +80,12 @@ class PinpadViewController: UIViewController {
     func shake(){
         clear()
         
-        var numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
+        let numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             for filler in numbers {
                 dispatch_async(dispatch_get_main_queue(), {
-                    var number = filler as UIView
+                    let number = filler as UIView
                     
                     let animation = CABasicAnimation(keyPath: "position")
                     animation.duration = 0.07
@@ -153,7 +153,8 @@ class PinpadViewController: UIViewController {
     @IBAction func buttonBack(sender: AnyObject) {
         switch currentIdx{
         case 0:
-            println("Invalid")
+            print("Invalid")
+            return
         case 1:
             first.hidden = true
         case 2:
@@ -161,7 +162,7 @@ class PinpadViewController: UIViewController {
         case 3:
             third.hidden = true
         default:
-            println("Invalid")
+            print("Invalid")
         }
         
         currentIdx--

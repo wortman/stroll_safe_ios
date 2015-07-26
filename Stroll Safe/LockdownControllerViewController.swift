@@ -42,7 +42,6 @@ class LockdownControllerViewController: UIViewController,ViewWithPinpadControlle
 
         // Do any additional setup after loading the view.
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            var realTime:useconds_t = 0
             while (self.timer < 200) {
                 usleep(self.sleepTime)
                 dispatch_async(dispatch_get_main_queue(), {
@@ -63,7 +62,7 @@ class LockdownControllerViewController: UIViewController,ViewWithPinpadControlle
             })
             
             if OhShitLock.sharedInstance.isLocked() {
-                var url:NSURL = NSURL(string: "tel://2179941016")!
+                let url:NSURL = NSURL(string: "tel://2179941016")!
                 UIApplication.sharedApplication().openURL(url)
             }
         })
@@ -81,7 +80,7 @@ class LockdownControllerViewController: UIViewController,ViewWithPinpadControlle
         timerPressed = true
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            for i in 0..<200 {
+            for _ in 0..<200 {
                 if (self.timerPressed && OhShitLock.sharedInstance.isLocked()){
                     self.velocity+=self.acceleration
                     usleep(self.sleepTime)

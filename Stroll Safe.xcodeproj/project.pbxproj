@@ -24,11 +24,20 @@
 		BFD7C97E1ABE3D8200D973DF /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97B1ABE3D8200D973DF /* close_icon.png */; };
 		BFD7C97F1ABE3D8200D973DF /* finger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97C1ABE3D8200D973DF /* finger_icon.png */; };
 		BFD7C9801ABE3D8200D973DF /* shake_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD7C97D1ABE3D8200D973DF /* shake_icon.png */; };
+		FA59FE5C1B64196300F27162 /* Stroll_SafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */; };
+		FA59FE651B641D2F00F27162 /* LockUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59FE641B641D2F00F27162 /* LockUtil.swift */; };
 		FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACDDF2DC1ABD57F50029DF5D;
+			remoteInfo = "Stroll Safe";
+		};
+		FA59FE5E1B64196300F27162 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ACDDF2D51ABD57F50029DF5D /* Project object */;
 			proxyType = 1;
@@ -59,6 +68,10 @@
 		BFD7C97B1ABE3D8200D973DF /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
 		BFD7C97C1ABE3D8200D973DF /* finger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_icon.png; sourceTree = "<group>"; };
 		BFD7C97D1ABE3D8200D973DF /* shake_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake_icon.png; sourceTree = "<group>"; };
+		FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stroll SafeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroll_SafeUITests.swift; sourceTree = "<group>"; };
+		FA59FE5D1B64196300F27162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA59FE641B641D2F00F27162 /* LockUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockUtil.swift; sourceTree = "<group>"; };
 		FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = ../TermsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,12 +90,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA59FE561B64196200F27162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		ACDDF2D41ABD57F50029DF5D = {
 			isa = PBXGroup;
 			children = (
+				FA59FE5A1B64196300F27162 /* Stroll SafeUITests */,
 				BF25169B1AC3627C00024CF6 /* Frameworks */,
 				ACDDF2DF1ABD57F50029DF5D /* Stroll Safe */,
 				ACDDF2F81ABD57F60029DF5D /* Stroll SafeTests */,
@@ -95,6 +116,7 @@
 			children = (
 				ACDDF2DD1ABD57F50029DF5D /* Stroll Safe.app */,
 				ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */,
+				FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +187,24 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		FA59FE5A1B64196300F27162 /* Stroll SafeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA59FE631B641CE000F27162 /* Util */,
+				FA59FE5B1B64196300F27162 /* Stroll_SafeUITests.swift */,
+				FA59FE5D1B64196300F27162 /* Info.plist */,
+			);
+			path = "Stroll SafeUITests";
+			sourceTree = "<group>";
+		};
+		FA59FE631B641CE000F27162 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA59FE641B641D2F00F27162 /* LockUtil.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,13 +243,33 @@
 			productReference = ACDDF2F51ABD57F60029DF5D /* Stroll SafeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FA59FE581B64196200F27162 /* Stroll SafeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "Stroll SafeUITests" */;
+			buildPhases = (
+				FA59FE551B64196200F27162 /* Sources */,
+				FA59FE561B64196200F27162 /* Frameworks */,
+				FA59FE571B64196200F27162 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA59FE5F1B64196300F27162 /* PBXTargetDependency */,
+			);
+			name = "Stroll SafeUITests";
+			productName = "Stroll SafeUITests";
+			productReference = FA59FE591B64196200F27162 /* Stroll SafeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		ACDDF2D51ABD57F50029DF5D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Stroll Safe";
 				TargetAttributes = {
 					ACDDF2DC1ABD57F50029DF5D = {
@@ -217,6 +277,10 @@
 					};
 					ACDDF2F41ABD57F60029DF5D = {
 						CreatedOnToolsVersion = 6.2;
+						TestTargetID = ACDDF2DC1ABD57F50029DF5D;
+					};
+					FA59FE581B64196200F27162 = {
+						CreatedOnToolsVersion = 7.0;
 						TestTargetID = ACDDF2DC1ABD57F50029DF5D;
 					};
 				};
@@ -236,6 +300,7 @@
 			targets = (
 				ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */,
 				ACDDF2F41ABD57F60029DF5D /* Stroll SafeTests */,
+				FA59FE581B64196200F27162 /* Stroll SafeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +320,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ACDDF2F31ABD57F60029DF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA59FE571B64196200F27162 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,6 +362,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA59FE551B64196200F27162 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA59FE651B641D2F00F27162 /* LockUtil.swift in Sources */,
+				FA59FE5C1B64196300F27162 /* Stroll_SafeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +378,11 @@
 			isa = PBXTargetDependency;
 			target = ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */;
 			targetProxy = ACDDF2F61ABD57F60029DF5D /* PBXContainerItemProxy */;
+		};
+		FA59FE5F1B64196300F27162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACDDF2DC1ABD57F50029DF5D /* Stroll Safe */;
+			targetProxy = FA59FE5E1B64196300F27162 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -340,6 +426,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -404,6 +491,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -415,6 +503,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Stroll Safe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -433,6 +522,7 @@
 				);
 				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
 			};
@@ -448,8 +538,39 @@
 				);
 				INFOPLIST_FILE = "Stroll SafeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stroll Safe.app/Stroll Safe";
+			};
+			name = Release;
+		};
+		FA59FE611B64196300F27162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Stroll SafeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.Stroll-SafeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Stroll Safe";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FA59FE621B64196300F27162 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Stroll SafeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.illinois.Stroll-SafeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Stroll Safe";
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -482,6 +603,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FA59FE601B64196300F27162 /* Build configuration list for PBXNativeTarget "Stroll SafeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA59FE611B64196300F27162 /* Debug */,
+				FA59FE621B64196300F27162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

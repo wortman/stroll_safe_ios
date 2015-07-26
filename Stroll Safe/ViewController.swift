@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         return true
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake && mode == state.SHAKE {
             OhShitLock.sharedInstance.lock(self.passcode)
             self.performSegueWithIdentifier("lockdownSegue", sender: nil)
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         let mainView = self.view
         
             // get any touch on the buttonView
-         if let touch = event.touchesForView(buttonView)?.first as? UITouch {
+         if let touch = event.touchesForView(buttonView)!.first {
             let location = touch.locationInView(mainView)
                 
             let frame = shake.frame
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
         progressLabel.text = "0"
         self.timer = 0
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            for i in 0..<20 {
+            for _ in 0..<20 {
                 if (self.mode != state.RELEASE){
                     break
                 }
@@ -214,23 +214,24 @@ class ViewController: UIViewController {
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest(entityName: "Passcode")
-        
-        var error : NSError? = nil
-        let fetchedResults =
-        managedObjectContext!.executeFetchRequest(fetchRequest,
-            error: &error) as! [Passcode]?
-        
-        // Store the pass in our global pass var, if it's there. Otherwise, segue to the setPass scene
-        if let results = fetchedResults {
-            if (!results.isEmpty && results[0].passcode != "empty"){
-                var result = results[0];
-                self.passcode = results[0].passcode
+        do {
+            let fetchedResults = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [Passcode]
+            
+            // Store the pass in our global pass var, if it's there. Otherwise, segue to the setPass scene
+            if (!fetchedResults.isEmpty && fetchedResults[0].passcode != "empty"){
+                self.passcode = fetchedResults[0].passcode
             }
             else{
                 dispatch_async(dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
                 })
             }
+        }
+        catch {
+            print("Error retreiving passcode \(error)")
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
+            })
         }
     }
 

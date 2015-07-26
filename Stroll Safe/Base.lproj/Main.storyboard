@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -174,6 +175,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGA-Gq-kzX">
                                 <rect key="frame" x="110" y="185" width="100" height="100"/>
+                                <accessibility key="accessibilityConfiguration" identifier="shake icon"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Xqh-gY-dnt"/>
@@ -275,7 +277,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacting Police" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-9y-mV3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Contacting Police" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-9y-mV3">
                                 <rect key="frame" x="75" y="20" width="171" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="cOD-Ub-OMQ"/>
@@ -288,6 +290,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWn-LA-qql">
                                         <rect key="frame" x="25" y="26" width="30" height="27"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="timeRemaining"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="hAB-6b-vhB"/>
                                             <constraint firstAttribute="width" constant="30" id="k8G-Of-wFn"/>
@@ -297,6 +300,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQU-3l-7vX">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="speed-dial"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -307,6 +311,9 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="circleProgressView">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="3Fz-YB-hLR"/>
                                     <constraint firstAttribute="centerX" secondItem="eWn-LA-qql" secondAttribute="centerX" id="EhQ-TJ-BhQ"/>
@@ -393,6 +400,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9d-Oh-yy1">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="First"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -415,6 +423,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEK-8b-s0e">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Third"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -433,6 +442,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xd-SQ-9vN">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Fourth"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -451,6 +461,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-oa-ehj">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Second"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -608,6 +619,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zay-4Y-dwF">
                                 <rect key="frame" x="192" y="284" width="96" height="59"/>
+                                <accessibility key="accessibilityConfiguration" identifier="back" label=""/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="dgN-e6-dEo"/>
                                     <constraint firstAttribute="width" constant="96" id="r9h-Sk-u5s"/>
@@ -629,6 +641,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8W-HY-hyT">
                                 <rect key="frame" x="1" y="284" width="96" height="59"/>
+                                <accessibility key="accessibilityConfiguration" identifier="clear"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="6Ou-1w-c7Z"/>
                                     <constraint firstAttribute="height" constant="59" id="fgy-1N-kJc"/>
@@ -708,7 +721,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
         <image name="shake_icon.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p6v-z3-XDB"/>
-        <segue reference="BtO-pi-kDi"/>
+        <segue reference="Gf1-St-0ga"/>
+        <segue reference="ddd-sB-b0W"/>
     </inferredMetricsTieBreakers>
 </document>
