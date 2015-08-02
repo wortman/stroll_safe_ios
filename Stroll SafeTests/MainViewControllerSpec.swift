@@ -37,13 +37,11 @@ class MainViewControllerSpec: QuickSpec {
                     storyboard.instantiateViewControllerWithIdentifier(
                         "MainView") as! Stroll_Safe.MainViewController
 
-                lock = OhShitLockMock()
-                lock.isLocked()
-                
-                viewController.injectDeps(lock)
-
                 viewController.beginAppearanceTransition(true, animated: false)
                 viewController.endAppearanceTransition()
+                
+                lock = OhShitLockMock()
+                viewController.injectDeps(lock)
             }
             
             it ("starts out in the default state") {
@@ -77,13 +75,13 @@ class MainViewControllerSpec: QuickSpec {
                 expect(viewController.progressLabel.hidden).to(beFalse())
                 expect(viewController.progressBar.hidden).to(beFalse())
                 
-                expect(lock.lockCalled).toEventually(beTrue(), timeout: 20)
+                expect(lock.lockCalled).toEventually(beTrue(), timeout: 2)
             }
             
             it ("does not lock down immediately when thumb is released") {
                 viewController.thumbUpInside(UIButton())
                 
-                expect(lock.lockCalled).to(beFalse())
+                expect(lock.lockCalled).to(beNil())
             }
         }
     }

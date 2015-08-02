@@ -10,24 +10,51 @@ import Foundation
 import Nimble
 import Quick
 import Stroll_Safe
+import CoreData
 
-class OhShitLockSpec: QuickSpec {
+class StoredPassLockSpec: QuickSpec {
     override func spec() {
-        describe("The Oh Shit Lock") {
-            var ohShitLock: OhShitLock!
-            beforeEach {
-                ohShitLock = OhShitLock()
-                expect(ohShitLock.lock("1234")).to(beTrue())
-                expect(ohShitLock.isLocked()).to(beTrue());
+        describe("The Stored Password Lock") {
+            var storedPassLock: StoredPassLock!
+            
+            it ("throws an error when there is no stored passcode") {
+                class NSManagedObjectContextMock: NSManagedObjectContext {
+                    enum Error: ErrorType {
+                        case someerror
+                    }
+                    
+                    override func executeFetchRequest(request: NSFetchRequest) throws -> [AnyObject] {
+                        throw Error.someerror
+                    }
+                }
+                
+                var context = NSManagedObjectContextMock()
+                expect(StoredPassLock(context)).to(raiseException())
             }
             
-            it ("unlocks when provided the right code") {
-                expect(ohShitLock.unlock("1234")).to(beTrue())
-                expect(ohShitLock.isLocked()).to(beFalse());
-            }
-            it ("does not unlock when provided the wrong code") {
-                expect(ohShitLock.unlock("2222")).to(beFalse())
-                expect(ohShitLock.isLocked()).to(beTrue());
+            describe ("lock/unlocking with stored passcode") {
+                var pass = "1234"
+
+                class NSManagedObjectContextMock: NSManagedObjectContext {
+                    override func executeFetchRequest(request: NSFetchRequest) throws -> [AnyObject] {
+                        return [pass]
+                    }
+                }
+                
+                var context: NSManagedObjectContextMock!
+                beforeEach {
+                    context = NSManagedObjectContextMock()
+                    try! storedPassLock = StoredPassLock(context)
+                    storedPassLock.lock()
+                }
+                
+                it ("unlocks when provided the right code") {
+                    expect(storedPassLock.unlock(pass)).to(beTrue())
+                }
+                
+                it ("does not unlock when provided the wrong code") {
+                    expect(storedPassLock.unlock("2222")).to(beFalse())
+                }
             }
         }
     }
