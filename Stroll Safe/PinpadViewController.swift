@@ -2,7 +2,7 @@
 //  PinpadViewController.swift
 //  Stroll Safe
 //
-//  Created by christine prince on 3/25/15.
+//  Created by noah prince on 3/25/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 
@@ -24,9 +24,9 @@ class PinpadViewController: UIViewController {
     var passField = [Double](count: 4, repeatedValue: 0.0)
     var currentIdx = 0;
 
-    var enteredFn: (String) -> () = { (String) -> () in }
+    var enteredFn: (String) throws -> () = { (String) -> () in }
     
-    func setEnteredFunction(fn: (String) -> ()) {
+    func setEnteredFunction(fn: (String) throws -> ()) {
         enteredFn = fn
     }
     
@@ -70,7 +70,7 @@ class PinpadViewController: UIViewController {
             third.hidden = false
         case 4:
             fourth.hidden = false
-            enteredFn(getCurrentPass() as String)
+            try! enteredFn(getCurrentPass() as String)
 
         default:
             print("Invalid")
@@ -78,7 +78,7 @@ class PinpadViewController: UIViewController {
         
     }
     
-    func shake(){        
+    func shake(){
         let numbers = [placeholder1,placeholder2,placeholder3,placeholder4]
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

@@ -2,7 +2,7 @@
 //  TermsViewController.swift
 //  Stroll Safe
 //
-//  Created by Lynda Prince on 5/15/15.
+//  Created by Noah Prince on 5/15/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 

@@ -13,12 +13,12 @@ class OhShitLock {
     var pass: String = ""
     var locked: Bool = false
     
-    class var sharedInstance: OhShitLock{
+    class var sharedInstance: OhShitLock {
         return _OhShitLockSharedInstance
     }
     
     // Locks the lock, returns true if locked
-    func lock(passwd: NSString) -> Bool{
+    func lock(passwd: NSString) -> Bool {
         pass = passwd as String
         locked = true
         return locked

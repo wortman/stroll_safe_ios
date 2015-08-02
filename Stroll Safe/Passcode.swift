@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Passcode: NSManagedObject {
+public class Passcode: NSManagedObject {
 
     @NSManaged var passcode: String
 

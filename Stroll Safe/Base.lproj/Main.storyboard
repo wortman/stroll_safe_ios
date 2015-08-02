@@ -88,7 +88,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                     <constraint firstAttribute="width" secondItem="upq-3U-inV" secondAttribute="height" multiplier="96:121" id="e9R-JG-yNi"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="sT2-At-Ld4" kind="embed" id="BtO-pi-kDi"/>
+                                    <segue destination="sT2-At-Ld4" kind="embed" identifier="setPassEmbedPinpad" id="BtO-pi-kDi"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amY-Mo-hzk">
@@ -130,10 +130,10 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
             </objects>
             <point key="canvasLocation" x="-225" y="239"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Stroll_Safe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="vXZ-lx-hvc" customClass="MainViewController" customModule="Stroll_Safe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -354,7 +354,7 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
                                     <constraint firstAttribute="width" secondItem="ud0-bo-PFM" secondAttribute="height" multiplier="96:121" id="xfd-wH-nDM"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="sT2-At-Ld4" kind="embed" id="ddd-sB-b0W"/>
+                                    <segue destination="sT2-At-Ld4" kind="embed" identifier="lockdownEmbedPinpad" id="ddd-sB-b0W"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -722,6 +722,6 @@ Eos ei tempor diceret, et graeco praesent eam. Partem utamur torquatos te quo. A
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gf1-St-0ga"/>
-        <segue reference="ddd-sB-b0W"/>
+        <segue reference="BtO-pi-kDi"/>
     </inferredMetricsTieBreakers>
 </document>

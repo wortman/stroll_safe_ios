@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ACDDF2E31ABD57F60029DF5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */; };
 		ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E41ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld */; };
-		ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E71ABD57F60029DF5D /* ViewController.swift */; };
+		ACDDF2E81ABD57F60029DF5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E71ABD57F60029DF5D /* MainViewController.swift */; };
 		ACDDF2EB1ABD57F60029DF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2E91ABD57F60029DF5D /* Main.storyboard */; };
 		ACDDF2ED1ABD57F60029DF5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */; };
 		ACDDF2F01ABD57F60029DF5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2EE1ABD57F60029DF5D /* LaunchScreen.xib */; };
@@ -17,7 +17,6 @@
 		BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0155891AC2094E00BED16A /* CircleProgressView.swift */; };
 		BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25169F1AC368D200024CF6 /* Passcode.swift */; };
 		BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A11AC3927300024CF6 /* PinpadViewController.swift */; };
-		BF2516A41AC39D5A00024CF6 /* ViewWithPinpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */; };
 		BF2516A61AC3A4C600024CF6 /* SetPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */; };
 		BF477D421ABE782D005D76E8 /* LockdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D411ABE782D005D76E8 /* LockdownViewController.swift */; };
 		BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
@@ -33,9 +32,11 @@
 		FA9E54851B65743A005267F9 /* OhShitLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */; };
 		FA9E54871B657676005267F9 /* PinpadViewControllSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E54861B657676005267F9 /* PinpadViewControllSpec.swift */; };
 		FA9E54881B65767B005267F9 /* PinpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A11AC3927300024CF6 /* PinpadViewController.swift */; };
-		FA9E54891B657FBE005267F9 /* ViewWithPinpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */; };
 		FA9E548A1B65848F005267F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2E91ABD57F60029DF5D /* Main.storyboard */; };
 		FA9E548B1B6584C3005267F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */; };
+		FA9E548D1B6C1D71005267F9 /* MainViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E548C1B6C1D71005267F9 /* MainViewControllerSpec.swift */; };
+		FA9E548E1B6C1DC5005267F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDDF2E71ABD57F60029DF5D /* MainViewController.swift */; };
+		FA9E548F1B6C3E3B005267F9 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25169F1AC368D200024CF6 /* Passcode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +131,7 @@
 		ACDDF2E11ABD57F50029DF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACDDF2E21ABD57F50029DF5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACDDF2E51ABD57F60029DF5D /* Stroll_Safe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stroll_Safe.xcdatamodel; sourceTree = "<group>"; };
-		ACDDF2E71ABD57F60029DF5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACDDF2E71ABD57F60029DF5D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ACDDF2EA1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACDDF2EC1ABD57F60029DF5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACDDF2EF1ABD57F60029DF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		BF0155891AC2094E00BED16A /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		BF25169F1AC368D200024CF6 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		BF2516A11AC3927300024CF6 /* PinpadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewController.swift; sourceTree = "<group>"; };
-		BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithPinpadController.swift; sourceTree = "<group>"; };
 		BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasscodeViewController.swift; sourceTree = "<group>"; };
 		BF477D411ABE782D005D76E8 /* LockdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockdownViewController.swift; sourceTree = "<group>"; };
 		BF477D431ABF6A5C005D76E8 /* OhShitLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLock.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		FA9E546E1B657362005267F9 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Vendor/Quick/Externals/Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
 		FA9E54811B6573B1005267F9 /* OhShitLockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OhShitLockSpec.swift; sourceTree = "<group>"; };
 		FA9E54861B657676005267F9 /* PinpadViewControllSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewControllSpec.swift; sourceTree = "<group>"; };
+		FA9E548C1B6C1D71005267F9 /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9E54861B657676005267F9 /* PinpadViewControllSpec.swift */,
+				FA9E548C1B6C1D71005267F9 /* MainViewControllerSpec.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -342,8 +344,7 @@
 			children = (
 				FA8C718C1B069A3B0091BEB8 /* TermsViewController.swift */,
 				BF2516A51AC3A4C600024CF6 /* SetPasscodeViewController.swift */,
-				BF2516A31AC39D5A00024CF6 /* ViewWithPinpadController.swift */,
-				ACDDF2E71ABD57F60029DF5D /* ViewController.swift */,
+				ACDDF2E71ABD57F60029DF5D /* MainViewController.swift */,
 				BF477D411ABE782D005D76E8 /* LockdownViewController.swift */,
 				BF2516A11AC3927300024CF6 /* PinpadViewController.swift */,
 			);
@@ -571,7 +572,7 @@
 			files = (
 				FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */,
 				BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */,
-				ACDDF2E81ABD57F60029DF5D /* ViewController.swift in Sources */,
+				ACDDF2E81ABD57F60029DF5D /* MainViewController.swift in Sources */,
 				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
 				BF477D421ABE782D005D76E8 /* LockdownViewController.swift in Sources */,
 				ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */,
@@ -579,7 +580,6 @@
 				BF477D441ABF6A5C005D76E8 /* OhShitLock.swift in Sources */,
 				BF2516A61AC3A4C600024CF6 /* SetPasscodeViewController.swift in Sources */,
 				BF01558A1AC2094E00BED16A /* CircleProgressView.swift in Sources */,
-				BF2516A41AC39D5A00024CF6 /* ViewWithPinpadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,10 +589,12 @@
 			files = (
 				FA9E54821B6573B1005267F9 /* OhShitLockSpec.swift in Sources */,
 				FA9E54851B65743A005267F9 /* OhShitLock.swift in Sources */,
-				FA9E54891B657FBE005267F9 /* ViewWithPinpadController.swift in Sources */,
+				FA9E548D1B6C1D71005267F9 /* MainViewControllerSpec.swift in Sources */,
+				FA9E548F1B6C3E3B005267F9 /* Passcode.swift in Sources */,
 				FA9E54881B65767B005267F9 /* PinpadViewController.swift in Sources */,
 				FA9E548B1B6584C3005267F9 /* AppDelegate.swift in Sources */,
 				FA9E54871B657676005267F9 /* PinpadViewControllSpec.swift in Sources */,
+				FA9E548E1B6C1DC5005267F9 /* MainViewController.swift in Sources */,
 				ACDDF2FC1ABD57F60029DF5D /* Stroll_SafeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

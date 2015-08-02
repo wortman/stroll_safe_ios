@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Stroll Safe
 //
-//  Created by Guest User on 3/21/15.
+//  Created by Noah Prince on 3/21/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ extension Float {
     }
 }
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     enum state {
         case START, THUMB, RELEASE,SHAKE
     }
@@ -32,13 +32,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var shakeDesc: UILabel!
     @IBOutlet weak var thumbDesc: UILabel!
     
+    var lock: OhShitLock!
+    
+    func injectDeps(theLock: OhShitLock = OhShitLock.sharedInstance) {
+        self.lock = theLock
+    }
+    
+    func shit(lock: OhShitLock) {
+        
+    }
+    
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake && mode == state.SHAKE {
-            OhShitLock.sharedInstance.lock(self.passcode)
+            lock.lock(self.passcode)
             self.performSegueWithIdentifier("lockdownSegue", sender: nil)
         }
     }
@@ -93,7 +103,7 @@ class ViewController: UIViewController {
                 }else{
                     enterShakeState()
                 }
-            }
+        }
     }
     
 
@@ -140,21 +150,29 @@ class ViewController: UIViewController {
                 }
                 usleep(2500)
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.timer++
-                    let fractionalProgress = Float(self.timer) / 20.0
-                    let animated = false;
-                
-                    self.progressBar.setProgress(fractionalProgress, animated: animated)
-                    self.progressLabel.text = ("\(2-(self.timer/10)) seconds remaining")
+                    self.incrementTimer()
                 })
             }
             if (self.mode == state.RELEASE){
                 dispatch_async(dispatch_get_main_queue(), {
-                    OhShitLock.sharedInstance.lock(self.passcode)
-                    self.performSegueWithIdentifier("lockdownSegue", sender: nil)
+                    self.lockdown()
                 })
             }
         })
+    }
+    
+    func incrementTimer() {
+        self.timer++
+        let fractionalProgress = Float(self.timer) / 20.0
+        let animated = false;
+        
+        self.progressBar.setProgress(fractionalProgress, animated: animated)
+        self.progressLabel.text = ("\(2-(self.timer/10)) seconds remaining")
+    }
+    
+    func lockdown() {
+        lock.lock(self.passcode)
+        performSegueWithIdentifier("lockdownSegue", sender: nil)
     }
     
     func enterShakeState(){
@@ -206,7 +224,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        injectDeps()
         enterStartState()
         
         // Retreive the managedObjectContext from AppDelegate

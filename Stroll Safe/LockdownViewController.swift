@@ -2,13 +2,13 @@
 //  LockdownViewController.swift
 //  Stroll Safe
 //
-//  Created by christine prince on 3/21/15.
+//  Created by noah prince on 3/21/15.
 //  Copyright (c) 2015 Stroll Safe. All rights reserved.
 //
 
 import UIKit
 
-class LockdownViewController: UIViewController,ViewWithPinpadController {
+class LockdownViewController: UIViewController {
 
     @IBOutlet weak var progressCircle: CircleProgressView!
     @IBOutlet weak var progressLabel: UILabel!
@@ -31,6 +31,17 @@ class LockdownViewController: UIViewController,ViewWithPinpadController {
     let acceleration = 3
     var timerPressed: Bool = false
     let sleepTime:useconds_t = 10000
+    
+    
+    weak var pinpadViewController: PinpadViewController!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? PinpadViewController
+            where segue.identifier == "lockdownEmbedPinpad" {
+                
+                self.pinpadViewController = vc
+        }
+    }
     
 /*  while (sizeof(array) < 4)
         listen for button presses
@@ -66,14 +77,20 @@ class LockdownViewController: UIViewController,ViewWithPinpadController {
                 UIApplication.sharedApplication().openURL(url)
             }
         })
+        
+        setupPinpadView()
     }
     
-    func passEntered(pass: String) -> Bool{
-        if OhShitLock.sharedInstance.unlock(pass){
-            self.performSegueWithIdentifier("unlockSegue", sender: nil)
-            return true
-        }
-        return false
+    // Dependency injected lock
+    //   see http://natashatherobot.com/unit-testing-swift-dependency-injection/
+    func setupPinpadView(ohShitLock: OhShitLock = OhShitLock.sharedInstance) {
+        pinpadViewController.setEnteredFunction({(pass: String) -> () in
+            self.pinpadViewController.clear();
+            if OhShitLock.sharedInstance.unlock(pass) {
+                self.performSegueWithIdentifier("unlockSegue", sender: nil)
+            }
+            self.pinpadViewController.shake();
+        })
     }
     
     @IBAction func timerTouchDown(sender: AnyObject) {
