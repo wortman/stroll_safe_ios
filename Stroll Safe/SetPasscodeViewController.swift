@@ -14,9 +14,10 @@ class SetPasscodeViewController: UIViewController {
 
     var firstPass = ""
     var firstEntered: Bool = false
-    
+    var lock: StoredPassLock!
+
     weak var pinpadViewController: PinpadViewController!
-    
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? PinpadViewController
             where segue.identifier == "setPassEmbedPinpad" {
@@ -25,7 +26,6 @@ class SetPasscodeViewController: UIViewController {
         }
     }
 
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,21 +44,7 @@ class SetPasscodeViewController: UIViewController {
             if (self.firstEntered){
                 // They entered the second password, verify it's the same as the first one they entered
                 if self.firstPass == pass {
-                    // Set the password in memory
-                    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-                    
-                    let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext!) as! Passcode
-                    
-                    var error : NSError? = nil
-                    do {
-                        try managedObjectContext!.save()
-                    } catch let error1 as NSError {
-                        error = error1
-                        NSLog("Unresolved error \(error), \(error!.userInfo)")
-                        abort()
-                    }
-                    
-                    newItem.passcode = pass
+                    StoredPassLock.setPass(pass)
                     
                     // Transition to the main screen
                     self.performSegueWithIdentifier("setPassSuccessSegue", sender: nil)

@@ -9,18 +9,18 @@
 import Foundation
 import Quick
 import Nimble
+import CoreData
 @testable import Stroll_Safe
 
 class MainViewControllerSpec: QuickSpec {
     
     override func spec() {
         describe ("the main view") {
-            class OhShitLockMock: Stroll_Safe.OhShitLock {
+            class StoredPassLockMock: Stroll_Safe.StoredPassLock {
                 var lockCalled: Bool!
                 
-                override func lock(passwd: NSString) -> Bool {
+                override func lock() {
                     lockCalled = true
-                    return true
                 }
                 
                 override func isLocked() -> Bool {
@@ -29,7 +29,9 @@ class MainViewControllerSpec: QuickSpec {
             }
             
             var viewController: Stroll_Safe.MainViewController!
-            var lock: OhShitLockMock!
+            var lock: StoredPassLockMock!
+            let moc = TestUtils().setUpInMemoryManagedObjectContext()
+            StoredPassLockMock.setPass("1234", moc: moc)
             
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,8 +41,9 @@ class MainViewControllerSpec: QuickSpec {
 
                 viewController.beginAppearanceTransition(true, animated: false)
                 viewController.endAppearanceTransition()
+
+                lock = try! StoredPassLockMock(moc: moc)
                 
-                lock = OhShitLockMock()
                 viewController.injectDeps(lock)
             }
             

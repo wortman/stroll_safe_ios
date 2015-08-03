@@ -7,65 +7,44 @@
 //
 
 import Foundation
-import Nimble
 import Quick
-import Stroll_Safe
+import Nimble
+@testable import Stroll_Safe
 import CoreData
 
 class StoredPassLockSpec: QuickSpec {
-    func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
-        let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()])!
-        
-        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        persistentStoreCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil, error: nil)
-        
-        let managedObjectContext = NSManagedObjectContext()
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        
-        return managedObjectContext
-    }
     
     override func spec() {
         describe("The Stored Password Lock") {
             var storedPassLock: StoredPassLock!
+            var moc: NSManagedObjectContext!
             
+            beforeEach  {
+                moc = TestUtils().setUpInMemoryManagedObjectContext()
+            }
+            
+            // Commented out while Nimble is still shitty and doesn't work
             it ("throws an error when there is no stored passcode") {
-                class NSManagedObjectContextMock: NSManagedObjectContext {
-                    enum Error: ErrorType {
-                        case someerror
-                    }
-                    
-                    override func executeFetchRequest(request: NSFetchRequest) throws -> [AnyObject] {
-                        throw Error.someerror
-                    }
-                }
-                
-                var context = NSManagedObjectContextMock()
-                expect(StoredPassLock(context)).to(raiseException())
+                expect{ try StoredPassLock(moc: moc) }.to(throwError())
             }
             
             describe ("lock/unlocking with stored passcode") {
-                var pass = "1234"
-
-                class NSManagedObjectContextMock: NSManagedObjectContext {
-                    override func executeFetchRequest(request: NSFetchRequest) throws -> [AnyObject] {
-                        return [pass]
-                    }
-                }
+                let pass = "1234"
                 
-                var context: NSManagedObjectContextMock!
                 beforeEach {
-                    context = NSManagedObjectContextMock()
-                    try! storedPassLock = StoredPassLock(context)
+                    StoredPassLock.setPass(pass, moc: moc)
+                    storedPassLock = try! StoredPassLock(moc: moc)
                     storedPassLock.lock()
                 }
                 
                 it ("unlocks when provided the right code") {
                     expect(storedPassLock.unlock(pass)).to(beTrue())
+                    expect(storedPassLock.isLocked()).to(beFalse())
                 }
                 
                 it ("does not unlock when provided the wrong code") {
                     expect(storedPassLock.unlock("2222")).to(beFalse())
+                    expect(storedPassLock.isLocked()).to(beTrue())
                 }
             }
         }

@@ -72,7 +72,7 @@ class LockdownViewController: UIViewController {
                     self.progressLabel.text = ("0")
             })
             
-            if OhShitLock.sharedInstance.isLocked() {
+            if try! StoredPassLock.sharedInstance().isLocked() {
                 let url:NSURL = NSURL(string: "tel://2179941016")!
                 UIApplication.sharedApplication().openURL(url)
             }
@@ -83,10 +83,10 @@ class LockdownViewController: UIViewController {
     
     // Dependency injected lock
     //   see http://natashatherobot.com/unit-testing-swift-dependency-injection/
-    func setupPinpadView(ohShitLock: OhShitLock = OhShitLock.sharedInstance) {
+    func setupPinpadView(ohShitLock: StoredPassLock = try! StoredPassLock.sharedInstance()) {
         pinpadViewController.setEnteredFunction({(pass: String) -> () in
             self.pinpadViewController.clear();
-            if OhShitLock.sharedInstance.unlock(pass) {
+            if try! StoredPassLock.sharedInstance().unlock(pass) {
                 self.performSegueWithIdentifier("unlockSegue", sender: nil)
             }
             self.pinpadViewController.shake();
@@ -98,7 +98,8 @@ class LockdownViewController: UIViewController {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             for _ in 0..<200 {
-                if (self.timerPressed && OhShitLock.sharedInstance.isLocked()){
+                let isLocked = try! StoredPassLock.sharedInstance().isLocked()
+                if (self.timerPressed && isLocked){
                     self.velocity+=self.acceleration
                     usleep(self.sleepTime)
                 }

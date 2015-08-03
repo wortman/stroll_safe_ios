@@ -32,14 +32,27 @@ class MainViewController: UIViewController {
     @IBOutlet weak var shakeDesc: UILabel!
     @IBOutlet weak var thumbDesc: UILabel!
     
-    var lock: OhShitLock!
+    var lock: StoredPassLock!
     
-    func injectDeps(theLock: OhShitLock = OhShitLock.sharedInstance) {
-        self.lock = theLock
+    /**
+    Should execute before displaying any view
+    For now decides which view to start at, set password or main
+    TODO: Move this to a place that actually executes before the main view loads
+    
+    :returns: <#return value description#>
+    */
+    func initializeApp() {
+        // If the stored pass lock is unable to retreive a stored password, this is a new user
+        do {
+            try StoredPassLock.sharedInstance()
+        } catch let error as NSError {
+            NSLog(error.localizedDescription)
+            self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
+        }
     }
     
-    func shit(lock: OhShitLock) {
-        
+    func injectDeps(theLock: StoredPassLock = try! StoredPassLock.sharedInstance()) {
+        self.lock = theLock
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -48,7 +61,7 @@ class MainViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake && mode == state.SHAKE {
-            lock.lock(self.passcode)
+            lock.lock()
             self.performSegueWithIdentifier("lockdownSegue", sender: nil)
         }
     }
@@ -171,7 +184,7 @@ class MainViewController: UIViewController {
     }
     
     func lockdown() {
-        lock.lock(self.passcode)
+        lock.lock()
         performSegueWithIdentifier("lockdownSegue", sender: nil)
     }
     
@@ -225,33 +238,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializeApp()
         injectDeps()
         enterStartState()
-        
-        // Retreive the managedObjectContext from AppDelegate
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        
-        // Create a new fetch request using the LogItem entity
-        let fetchRequest = NSFetchRequest(entityName: "Passcode")
-        do {
-            let fetchedResults = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [Passcode]
-            
-            // Store the pass in our global pass var, if it's there. Otherwise, segue to the setPass scene
-            if (!fetchedResults.isEmpty && fetchedResults[0].passcode != "empty"){
-                self.passcode = fetchedResults[0].passcode
-            }
-            else{
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
-                })
-            }
-        }
-        catch {
-            print("Error retreiving passcode \(error)")
-            dispatch_async(dispatch_get_main_queue(), {
-                self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
-            })
-        }
     }
 
     override func didReceiveMemoryWarning() {
