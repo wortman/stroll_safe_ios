@@ -2,18 +2,20 @@
 //  Stroll_SafeUITests.swift
 //  Stroll SafeUITests
 //
-//  Created by Lynda Prince on 7/25/15.
+//  Created by Noah Prince on 7/25/15.
 //  Copyright © 2015 Stroll Safe. All rights reserved.
 //
 
 import XCTest
+import CoreData
+import UIKit
+import Foundation
+@testable import Stroll_Safe
 
 class Stroll_SafeUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -24,6 +26,9 @@ class Stroll_SafeUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        // Delete all existing passcodes in CoreData for a fresh state
+        //Passcode.purge()
     }
     
     func testSpeedCall(){

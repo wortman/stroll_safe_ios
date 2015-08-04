@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 public class Passcode: NSManagedObject {
     enum PasscodeError: ErrorType {
@@ -19,22 +20,42 @@ public class Passcode: NSManagedObject {
     /**
     Gets the stored passcode for the given managed object context
     
-    :param: moc the managed object context
+    :param: managedObjectContext the managed object context
     */
-    func get(moc: NSManagedObjectContext) throws {
+    class func get(managedObjectContext: NSManagedObjectContext) throws -> String {
         let fetchRequest = NSFetchRequest(entityName: "Passcode")
         
+        var fetchResults: [Passcode]
         do {
-            let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [Passcode]
-            if let result = fetchResults!.first {
-                return result.passcode
-            } else {
-                throw StoredPassLockError.NoResultsFound
-            }
+            fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Passcode]
         } catch let fetchError as NSError {
             print("fetch Passcode error: \(fetchError.localizedDescription)")
             throw fetchError
         }
+        
+        if let result = fetchResults.first {
+            return result.passcode
+        } else {
+            throw PasscodeError.NoResultsFound
+        }
     }
+
+    /**
+    Sets the stored passcode for the given managed object context
     
+    :param: password             the passcode
+    :param: managedObjectContext the managed object context
+    */
+    class func set(passcode: String, managedObjectContext: NSManagedObjectContext) {
+        // Store the password
+        let newItem = NSEntityDescription.insertNewObjectForEntityForName("Passcode", inManagedObjectContext: managedObjectContext) as! Passcode
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            NSLog("Unresolved error while storing password \(error), \(error.userInfo)")
+            abort()
+        }
+        
+        newItem.passcode = passcode
+    }
 }

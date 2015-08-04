@@ -17,6 +17,9 @@ extension Float {
 }
 
 class MainViewController: UIViewController {
+    // hacked see http://stackoverflow.com/questions/24015207/class-variables-not-yet-supported
+    static var test: Bool = true
+    
     enum state {
         case START, THUMB, RELEASE,SHAKE
     }
@@ -32,7 +35,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var shakeDesc: UILabel!
     @IBOutlet weak var thumbDesc: UILabel!
     
-    var lock: StoredPassLock!
+    var managedObjectContext: NSManagedObjectContext!
     
     /**
     Should execute before displaying any view
@@ -42,17 +45,37 @@ class MainViewController: UIViewController {
     :returns: <#return value description#>
     */
     func initializeApp() {
-        // If the stored pass lock is unable to retreive a stored password, this is a new user
+        if (MainViewController.test) {
+            let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+            let request = NSFetchRequest(entityName: "Passcode")
+            
+            var passcodes = try! context.executeFetchRequest(request)
+            
+            for passcode: AnyObject in passcodes
+            {
+                context.deleteObject(passcode as! NSManagedObject)
+            }
+            
+            passcodes.removeAll(keepCapacity: false)
+            try! context.save()
+            
+            MainViewController.test = false
+        }
+        
         do {
-            try StoredPassLock.sharedInstance()
+            try Passcode.get(managedObjectContext)
+        } catch Passcode.PasscodeError.NoResultsFound {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
+            })
         } catch let error as NSError {
             NSLog(error.localizedDescription)
-            self.performSegueWithIdentifier("firstTimeUserSegue", sender: nil)
+            abort()
         }
     }
     
-    func injectDeps(theLock: StoredPassLock = try! StoredPassLock.sharedInstance()) {
-        self.lock = theLock
+    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
+        self.managedObjectContext = managedObjectContext
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -61,8 +84,7 @@ class MainViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake && mode == state.SHAKE {
-            lock.lock()
-            self.performSegueWithIdentifier("lockdownSegue", sender: nil)
+            lockdown()
         }
     }
 
@@ -184,7 +206,6 @@ class MainViewController: UIViewController {
     }
     
     func lockdown() {
-        lock.lock()
         performSegueWithIdentifier("lockdownSegue", sender: nil)
     }
     
@@ -238,8 +259,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeApp()
         injectDeps()
+        initializeApp()
         enterStartState()
     }
 

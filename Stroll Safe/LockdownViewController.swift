@@ -7,8 +7,42 @@
 //
 
 import UIKit
+import CoreData
 
 class LockdownViewController: UIViewController {
+    
+    class Lock {
+        var pass: String = ""
+        var locked: Bool = false
+        
+        /**
+        Locks this lock with the given password
+        
+        :param: passwd the password
+        */
+        func lock(passwd: String) {
+            pass = passwd
+            locked = true
+        }
+        
+        /**
+        Attempts to unlock with the given password.
+        
+        :param: passwd The unlock password
+        
+        :returns: True if the pass unlocked it, false if it was an incorrect password
+        */
+        func unlock(passwd: NSString) -> Bool{
+            locked = !(passwd == pass)
+            return !locked
+        }
+        
+        func isLocked() -> Bool{
+            return locked
+        }
+    }
+    
+    let lock = Lock()
 
     @IBOutlet weak var progressCircle: CircleProgressView!
     @IBOutlet weak var progressLabel: UILabel!
@@ -32,8 +66,14 @@ class LockdownViewController: UIViewController {
     var timerPressed: Bool = false
     let sleepTime:useconds_t = 10000
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     
     weak var pinpadViewController: PinpadViewController!
+    
+    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
+        self.managedObjectContext = managedObjectContext
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? PinpadViewController
@@ -64,7 +104,6 @@ class LockdownViewController: UIViewController {
                         self.progressLabel.text = ("\(20-(self.timer/10))")
                     }
                 })
-                
             }
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -72,24 +111,25 @@ class LockdownViewController: UIViewController {
                     self.progressLabel.text = ("0")
             })
             
-            if try! StoredPassLock.sharedInstance().isLocked() {
+            if self.lock.isLocked() {
                 let url:NSURL = NSURL(string: "tel://2179941016")!
                 UIApplication.sharedApplication().openURL(url)
             }
         })
         
+        injectDeps()
+        lock.lock(try! Passcode.get(managedObjectContext))
         setupPinpadView()
     }
     
-    // Dependency injected lock
-    //   see http://natashatherobot.com/unit-testing-swift-dependency-injection/
-    func setupPinpadView(ohShitLock: StoredPassLock = try! StoredPassLock.sharedInstance()) {
+    func setupPinpadView() {
         pinpadViewController.setEnteredFunction({(pass: String) -> () in
             self.pinpadViewController.clear();
-            if try! StoredPassLock.sharedInstance().unlock(pass) {
+            if self.lock.unlock(pass) {
                 self.performSegueWithIdentifier("unlockSegue", sender: nil)
+            } else {
+                self.pinpadViewController.shake();
             }
-            self.pinpadViewController.shake();
         })
     }
     
@@ -98,8 +138,7 @@ class LockdownViewController: UIViewController {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             for _ in 0..<200 {
-                let isLocked = try! StoredPassLock.sharedInstance().isLocked()
-                if (self.timerPressed && isLocked){
+                if (self.timerPressed && self.lock.isLocked()){
                     self.velocity+=self.acceleration
                     usleep(self.sleepTime)
                 }

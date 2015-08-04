@@ -14,9 +14,13 @@ class SetPasscodeViewController: UIViewController {
 
     var firstPass = ""
     var firstEntered: Bool = false
-    var lock: StoredPassLock!
+    var managedObjectContext: NSManagedObjectContext!
 
     weak var pinpadViewController: PinpadViewController!
+    
+    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
+        self.managedObjectContext = managedObjectContext
+    }
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? PinpadViewController
@@ -29,6 +33,7 @@ class SetPasscodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        injectDeps()
         setupPinpadView()
     }
 
@@ -44,7 +49,7 @@ class SetPasscodeViewController: UIViewController {
             if (self.firstEntered){
                 // They entered the second password, verify it's the same as the first one they entered
                 if self.firstPass == pass {
-                    StoredPassLock.setPass(pass)
+                    Passcode.set(pass, managedObjectContext: self.managedObjectContext)
                     
                     // Transition to the main screen
                     self.performSegueWithIdentifier("setPassSuccessSegue", sender: nil)
