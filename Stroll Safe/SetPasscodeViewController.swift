@@ -14,13 +14,8 @@ class SetPasscodeViewController: UIViewController {
 
     var firstPass = ""
     var firstEntered: Bool = false
-    var managedObjectContext: NSManagedObjectContext!
 
     weak var pinpadViewController: PinpadViewController!
-    
-    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
-        self.managedObjectContext = managedObjectContext
-    }
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? PinpadViewController
@@ -33,8 +28,7 @@ class SetPasscodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        injectDeps()
-        setupPinpadView()
+        setupPinpadViewToStorePasscode()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,14 +36,19 @@ class SetPasscodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupPinpadView() {
+    /**
+    Sets up the pinpad view to store the provided passcode in the managedObjectContext
+    
+    :param: managedObjectContext the context to store the provided passcode in
+    */
+    func setupPinpadViewToStorePasscode(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
         pinpadViewController.setEnteredFunction({(pass: String) throws -> () in
             self.pinpadViewController.clear()
             
             if (self.firstEntered){
                 // They entered the second password, verify it's the same as the first one they entered
                 if self.firstPass == pass {
-                    Passcode.set(pass, managedObjectContext: self.managedObjectContext)
+                    Passcode.set(pass, managedObjectContext: managedObjectContext)
                     
                     // Transition to the main screen
                     self.performSegueWithIdentifier("setPassSuccessSegue", sender: nil)

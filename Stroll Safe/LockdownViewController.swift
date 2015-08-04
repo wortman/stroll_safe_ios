@@ -66,14 +66,7 @@ class LockdownViewController: UIViewController {
     var timerPressed: Bool = false
     let sleepTime:useconds_t = 10000
     
-    var managedObjectContext: NSManagedObjectContext!
-    
-    
     weak var pinpadViewController: PinpadViewController!
-    
-    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
-        self.managedObjectContext = managedObjectContext
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? PinpadViewController
@@ -117,12 +110,12 @@ class LockdownViewController: UIViewController {
             }
         })
         
-        injectDeps()
-        lock.lock(try! Passcode.get(managedObjectContext))
-        setupPinpadView()
+        setupPinpadViewWithStoredPasscode()
     }
     
-    func setupPinpadView() {
+    func setupPinpadViewWithStoredPasscode(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
+        lock.lock(try! Passcode.get(managedObjectContext))
+
         pinpadViewController.setEnteredFunction({(pass: String) -> () in
             self.pinpadViewController.clear();
             if self.lock.unlock(pass) {

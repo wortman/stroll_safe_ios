@@ -30,8 +30,10 @@
 		FA9E54871B657676005267F9 /* PinpadViewControllSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E54861B657676005267F9 /* PinpadViewControllSpec.swift */; };
 		FA9E548A1B65848F005267F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDDF2E91ABD57F60029DF5D /* Main.storyboard */; };
 		FA9E548D1B6C1D71005267F9 /* MainViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E548C1B6C1D71005267F9 /* MainViewControllerSpec.swift */; };
+		FAA2A1721B7142FD00F3F89C /* TimedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2A1711B7142FD00F3F89C /* TimedAction.swift */; };
 		FAD0D5861B6FF868000B7F1E /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D5851B6FF868000B7F1E /* TestUtils.swift */; };
 		FAD0D5881B700B15000B7F1E /* PasscodeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D5871B700B15000B7F1E /* PasscodeSpec.swift */; };
+		FAD0D5941B704884000B7F1E /* TimedActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D5931B704884000B7F1E /* TimedActionSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,8 +152,10 @@
 		FA9E54591B657355005267F9 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Vendor/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		FA9E54861B657676005267F9 /* PinpadViewControllSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinpadViewControllSpec.swift; sourceTree = "<group>"; };
 		FA9E548C1B6C1D71005267F9 /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
+		FAA2A1711B7142FD00F3F89C /* TimedAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedAction.swift; sourceTree = "<group>"; };
 		FAD0D5851B6FF868000B7F1E /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		FAD0D5871B700B15000B7F1E /* PasscodeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeSpec.swift; sourceTree = "<group>"; };
+		FAD0D5931B704884000B7F1E /* TimedActionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedActionSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD0D5871B700B15000B7F1E /* PasscodeSpec.swift */,
+				FAD0D5931B704884000B7F1E /* TimedActionSpec.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0155891AC2094E00BED16A /* CircleProgressView.swift */,
+				FAA2A1711B7142FD00F3F89C /* TimedAction.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				FA8C718D1B069A3B0091BEB8 /* TermsViewController.swift in Sources */,
 				BF2516A21AC3927300024CF6 /* PinpadViewController.swift in Sources */,
 				ACDDF2E81ABD57F60029DF5D /* MainViewController.swift in Sources */,
+				FAA2A1721B7142FD00F3F89C /* TimedAction.swift in Sources */,
 				BF2516A01AC368D200024CF6 /* Passcode.swift in Sources */,
 				BF477D421ABE782D005D76E8 /* LockdownViewController.swift in Sources */,
 				ACDDF2E61ABD57F60029DF5D /* Stroll_Safe.xcdatamodeld in Sources */,
@@ -581,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD0D5941B704884000B7F1E /* TimedActionSpec.swift in Sources */,
 				FA9E548D1B6C1D71005267F9 /* MainViewControllerSpec.swift in Sources */,
 				FAD0D5881B700B15000B7F1E /* PasscodeSpec.swift in Sources */,
 				FA9E54871B657676005267F9 /* PinpadViewControllSpec.swift in Sources */,

@@ -16,9 +16,10 @@ class MainViewControllerSpec: QuickSpec {
     override func spec() {
         describe ("the main view") {
             var viewController: Stroll_Safe.MainViewController!
-            let moc = TestUtils().setUpInMemoryManagedObjectContext()
             
             beforeEach {
+                MainViewController.test = true
+
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 viewController =
                     storyboard.instantiateViewControllerWithIdentifier(
@@ -26,7 +27,6 @@ class MainViewControllerSpec: QuickSpec {
 
                 viewController.beginAppearanceTransition(true, animated: false)
                 viewController.endAppearanceTransition()
-                viewController.injectDeps(TestUtils().setUpInMemoryManagedObjectContext())
             }
             
             it ("starts out in the default state") {

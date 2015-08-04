@@ -34,30 +34,28 @@ class MainViewController: UIViewController {
     @IBOutlet weak var shake: UIButton!
     @IBOutlet weak var shakeDesc: UILabel!
     @IBOutlet weak var thumbDesc: UILabel!
-    
-    var managedObjectContext: NSManagedObjectContext!
-    
+        
     /**
     Should execute before displaying any view
     For now decides which view to start at, set password or main
     TODO: Move this to a place that actually executes before the main view loads
     
+    :params: The managed object context to check for the passcode
     :returns: <#return value description#>
     */
-    func initializeApp() {
+    func initializeApp(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
         if (MainViewController.test) {
-            let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
             let request = NSFetchRequest(entityName: "Passcode")
             
-            var passcodes = try! context.executeFetchRequest(request)
+            var passcodes = try! managedObjectContext.executeFetchRequest(request)
             
             for passcode: AnyObject in passcodes
             {
-                context.deleteObject(passcode as! NSManagedObject)
+                managedObjectContext.deleteObject(passcode as! NSManagedObject)
             }
             
             passcodes.removeAll(keepCapacity: false)
-            try! context.save()
+            try! managedObjectContext.save()
             
             MainViewController.test = false
         }
@@ -72,10 +70,6 @@ class MainViewController: UIViewController {
             NSLog(error.localizedDescription)
             abort()
         }
-    }
-    
-    func injectDeps(managedObjectContext: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!) {
-        self.managedObjectContext = managedObjectContext
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -259,7 +253,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        injectDeps()
         initializeApp()
         enterStartState()
     }
